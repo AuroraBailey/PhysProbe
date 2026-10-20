@@ -3,31 +3,39 @@
 
 from __future__ import annotations
 
+# Support both direct script execution and editable package installation.
+import sys as _env_sys
+from pathlib import Path as _EnvPath
+for _env_root in _EnvPath(__file__).resolve().parents:
+    if (_env_root / "src/common/utils/env.py").is_file():
+        _env_sys.path.insert(0, str(_env_root / "src"))
+        _env_sys.path.insert(0, str(_env_root))
+        break
+from common.utils.env import load_project_env as _load_project_env
+_load_project_env()
+
+
 import argparse
-import base64
 import json
-import os
 import sys
 import time
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-import requests
+from experiments.ablation.normal.normal_provider_utils import (
+    SUPPORTED_EXTS,
+    add_provider_args,
+    extract_error_code,
+    normalize_provider_name,
+    resolve_provider_runtime,
+    run_normal_generation,
+    save_generated_image,
+    should_skip_image_error,
+)
 
-try:
-    from volcenginesdkarkruntime import Ark
-except Exception as e:
-    Ark = None
-    _ARK_IMPORT_ERROR = e
-else:
-    _ARK_IMPORT_ERROR = None
 
-
-DEFAULT_BASE_URL = "https://ark.cn-beijing.volces.com/api/v3"
-DEFAULT_NORMAL_MODEL = "doubao-seedream-5-0-260128"
-SUPPORTED_EXTS = {".jpg", ".jpeg", ".png", ".webp", ".bmp"}
-
+from experiments.ablation.normal.prompts import FULL_RGB_ONLY_PROMPT, FULL_RGB_PLUS_EXAMPLE_PROMPT, MINIMAL_RGB_ONLY_PROMPT, MINIMAL_RGB_PLUS_EXAMPLE_PROMPT
 
 @dataclass(frozen=True)
 class VariantConfig:
@@ -38,8 +46,6 @@ class VariantConfig:
     prompt_text: str
     use_example_pair: bool
     prompt_level: str
-    default_example_rgb: str = ""
-    default_example_normal: str = ""
 
 
 def parse_args(config: VariantConfig) -> argparse.Namespace:
@@ -48,10 +54,13 @@ def parse_args(config: VariantConfig) -> argparse.Namespace:
     parser.add_argument("--output_dir", type=str, required=True)
     parser.add_argument("--filename_suffix", type=str, default="_im.png")
     parser.add_argument("--recursive", action="store_true")
-    parser.add_argument("--base_url", type=str, default=DEFAULT_BASE_URL)
-    parser.add_argument("--normal_model", type=str, default=DEFAULT_NORMAL_MODEL)
+    parser.add_argument("--api_key", type=str, default=None)
+    add_provider_args(parser)
+    parser.add_argument("--normal_model", type=str, default=None)
     parser.add_argument("--normal_size", type=str, default="adaptive")
     parser.add_argument("--watermark", action="store_true")
+    parser.add_argument("--seed", type=int, default=123)
+    parser.add_argument("--guidance_scale", type=float, default=5.5)
     parser.add_argument("--max_generate", type=int, default=0)
     parser.add_argument("--overwrite", action="store_true")
     parser.add_argument("--preserve_relative_dirs", action="store_true")
@@ -62,84 +71,28 @@ def parse_args(config: VariantConfig) -> argparse.Namespace:
     parser.add_argument(
         "--example_rgb",
         type=str,
+        required=config.use_example_pair,
         default="",
-        help="Optional override for the exemplar RGB used by fixed-example variants.",
+        help="Required for variants that use a fixed example pair.",
     )
     parser.add_argument(
         "--example_normal",
         type=str,
+        required=config.use_example_pair,
         default="",
-        help="Optional override for the exemplar normal map used by fixed-example variants.",
+        help="Required for variants that use a fixed example pair.",
     )
     return parser.parse_args()
 
 
-def ensure_api_key() -> str:
-    api_key = os.environ.get("ARK_API_KEY")
-    if not api_key:
-        raise RuntimeError("Missing ARK_API_KEY in environment.")
-    return api_key
-
-
 def list_images(input_dir: Path, filename_suffix: Optional[str], recursive: bool) -> List[Path]:
     iterator = input_dir.rglob("*") if recursive else input_dir.iterdir()
-    images = [p for p in sorted(iterator) if p.is_file() and p.suffix.lower() in SUPPORTED_EXTS]
+    images = [path for path in sorted(iterator) if path.is_file() and path.suffix.lower() in SUPPORTED_EXTS]
     if filename_suffix:
-        images = [p for p in images if p.name.endswith(filename_suffix)]
+        images = [path for path in images if path.name.endswith(filename_suffix)]
     if not images:
         raise FileNotFoundError(f"No supported images found in {input_dir}")
     return images
-
-
-def guess_mime(path: Path) -> str:
-    ext = path.suffix.lower()
-    if ext in {".jpg", ".jpeg"}:
-        return "image/jpeg"
-    if ext == ".png":
-        return "image/png"
-    if ext == ".webp":
-        return "image/webp"
-    if ext == ".bmp":
-        return "image/bmp"
-    return "application/octet-stream"
-
-
-def file_to_data_uri(path: Path) -> str:
-    data = path.read_bytes()
-    mime = guess_mime(path)
-    b64 = base64.b64encode(data).decode("utf-8")
-    return f"data:{mime};base64,{b64}"
-
-
-def save_url_to_file(url: str, save_path: Path, timeout: int) -> None:
-    with requests.get(url, stream=True, timeout=timeout) as response:
-        response.raise_for_status()
-        with open(save_path, "wb") as f:
-            for chunk in response.iter_content(chunk_size=1024 * 1024):
-                if chunk:
-                    f.write(chunk)
-
-
-def save_image_response(image_item: Any, save_path: Path, timeout: int) -> None:
-    url = getattr(image_item, "url", None)
-    if url:
-        save_url_to_file(url, save_path, timeout)
-        return
-
-    b64_json = getattr(image_item, "b64_json", None)
-    if b64_json:
-        save_path.write_bytes(base64.b64decode(b64_json))
-        return
-
-    if isinstance(image_item, dict):
-        if image_item.get("url"):
-            save_url_to_file(image_item["url"], save_path, timeout)
-            return
-        if image_item.get("b64_json"):
-            save_path.write_bytes(base64.b64decode(image_item["b64_json"]))
-            return
-
-    raise RuntimeError("Image response contains neither url nor b64_json.")
 
 
 def load_json_file(path: Path) -> Any:
@@ -190,6 +143,7 @@ def record_skipped_image(
         "variant_id": config.variant_id,
         "image_name": image_path.name,
         "relative_image_path": image_path.relative_to(input_dir).as_posix(),
+        "error_code": extract_error_code(exc),
         "error_type": exc.__class__.__name__,
         "error_message": str(exc),
         "attempts": attempts,
@@ -244,7 +198,7 @@ def get_pending_images(
     return pending
 
 
-def build_setup_payload(config: VariantConfig, args: argparse.Namespace) -> Dict[str, Any]:
+def build_setup_payload(config: VariantConfig, args: argparse.Namespace, runtime: Any) -> Dict[str, Any]:
     return {
         "variant_id": config.variant_id,
         "variant_name": config.variant_name,
@@ -252,10 +206,15 @@ def build_setup_payload(config: VariantConfig, args: argparse.Namespace) -> Dict
         "prompt_level": config.prompt_level,
         "use_example_pair": config.use_example_pair,
         "prompt_text": config.prompt_text,
-        "normal_model": args.normal_model,
-        "base_url": args.base_url,
+        "provider": runtime.provider,
+        "normal_model": runtime.normal_model,
+        "normal_base_url": runtime.normal_base_url,
+        "generation_mode": runtime.generation_mode,
+        "normal_quality": runtime.normal_quality,
         "normal_size": args.normal_size,
         "watermark": args.watermark,
+        "seed": args.seed,
+        "guidance_scale": args.guidance_scale,
         "max_generate": args.max_generate,
         "overwrite": args.overwrite,
         "preserve_relative_dirs": args.preserve_relative_dirs,
@@ -268,54 +227,9 @@ def build_setup_payload(config: VariantConfig, args: argparse.Namespace) -> Dict
     }
 
 
-def run_image_generation(
-    ark_client: Any,
-    model: str,
-    prompt: str,
-    image_paths: List[Path],
-    size: str,
-    watermark: bool,
-) -> Any:
-    image_uris = [file_to_data_uri(path) for path in image_paths]
-    normalized_size = (size or "adaptive").strip().lower()
-    if normalized_size == "adaptive":
-        normalized_size = "2k"
-
-    if "seedream" in model.lower():
-        return ark_client.images.generate(
-            model=model,
-            prompt=prompt,
-            image=image_uris,
-            size=normalized_size,
-            watermark=watermark,
-        )
-
-    try:
-        return ark_client.images.generate(
-            model=model,
-            prompt=prompt,
-            image=image_uris if len(image_uris) > 1 else image_uris[0],
-            size=normalized_size,
-            watermark=watermark,
-        )
-    except TypeError:
-        return ark_client.images.generate(
-            model=model,
-            prompt=prompt,
-            image=image_uris[-1],
-            size=normalized_size,
-            watermark=watermark,
-        )
-
-
 def run_variant(config: VariantConfig) -> None:
     args = parse_args(config)
-    api_key = ensure_api_key()
-
-    if Ark is None:
-        raise ImportError(
-            'Failed to import volcenginesdkarkruntime. Please install: pip install "volcengine-python-sdk[ark]"'
-        ) from _ARK_IMPORT_ERROR
+    runtime = resolve_provider_runtime(args)
 
     input_dir = Path(args.input_dir)
     output_dir = Path(args.output_dir)
@@ -324,17 +238,8 @@ def run_variant(config: VariantConfig) -> None:
     normal_dir.mkdir(parents=True, exist_ok=True)
     meta_dir.mkdir(parents=True, exist_ok=True)
 
-    script_dir = Path(__file__).resolve().parent
-    examples_dir = script_dir / "examples"
-    example_rgb = None
-    example_normal = None
-    if config.use_example_pair:
-        example_rgb = Path(args.example_rgb).expanduser() if args.example_rgb else (
-            examples_dir / config.default_example_rgb if config.default_example_rgb else None
-        )
-        example_normal = Path(args.example_normal).expanduser() if args.example_normal else (
-            examples_dir / config.default_example_normal if config.default_example_normal else None
-        )
+    example_rgb = Path(args.example_rgb) if config.use_example_pair else None
+    example_normal = Path(args.example_normal) if config.use_example_pair else None
     if config.use_example_pair:
         if not example_rgb or not example_normal:
             raise ValueError("This variant requires both --example_rgb and --example_normal")
@@ -359,19 +264,27 @@ def run_variant(config: VariantConfig) -> None:
     skipped_images = load_manifest(skipped_path)
     setup_path = meta_dir / "setup.json"
     setup_path.write_text(
-        json.dumps(build_setup_payload(config, args), ensure_ascii=False, indent=2),
+        json.dumps(build_setup_payload(config, args, runtime), ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
 
     print(
         f"[1/3] found {len(image_paths)} images; selected {len(image_paths_for_generate)}; "
         f"pending {len(pending_image_paths)}; variant={config.variant_id}; "
-        f"prompt_level={config.prompt_level}; example_pair={config.use_example_pair}"
+        f"provider={runtime.provider}; prompt_level={config.prompt_level}; example_pair={config.use_example_pair}"
+    )
+    print(
+        "      "
+        f"filename_suffix={args.filename_suffix or 'N/A'} | "
+        f"recursive={args.recursive} | "
+        f"preserve_relative_dirs={args.preserve_relative_dirs} | "
+        f"normal_model={runtime.normal_model} | "
+        f"normal_base_url={runtime.normal_base_url} | "
+        f"generation_mode={runtime.generation_mode}"
     )
     print("[2/3] fixed prompt ablation mode; analysis disabled")
     print(f"[3/3] start normal generation for {len(pending_image_paths)} pending images")
 
-    ark_client = Ark(base_url=args.base_url, api_key=api_key)
     for idx, image_path in enumerate(image_paths_for_generate, start=1):
         out_normal = build_image_output_path(
             image_path,
@@ -387,38 +300,35 @@ def run_variant(config: VariantConfig) -> None:
         print(f"  - ({idx}/{len(image_paths_for_generate)}) {image_path.name}")
         input_images = [image_path]
         if config.use_example_pair and example_rgb and example_normal:
-            input_images = [example_rgb, example_normal, image_path]
+            input_images = [image_path, example_rgb, example_normal]
 
         last_exc: Optional[Exception] = None
-        success = False
+        response = None
         for attempt in range(1, max(1, args.max_retries) + 1):
             try:
-                response = run_image_generation(
-                    ark_client=ark_client,
-                    model=args.normal_model,
+                response = run_normal_generation(
+                    runtime=runtime,
                     prompt=config.prompt_text,
                     image_paths=input_images,
                     size=args.normal_size,
                     watermark=args.watermark,
+                    seed=args.seed,
+                    guidance_scale=args.guidance_scale,
+                    timeout=args.timeout,
                 )
-                ensure_parent_dir(out_normal)
-                save_image_response(response.data[0], out_normal, timeout=args.timeout)
-                success = True
                 break
             except Exception as exc:
                 last_exc = exc
-                if attempt >= max(1, args.max_retries):
+                if should_skip_image_error(exc) or attempt >= max(1, args.max_retries):
                     break
                 print(
                     f"      generation failed on attempt {attempt}/{max(1, args.max_retries)}: {exc} | retrying"
                 )
                 time.sleep(max(0.0, args.retry_sleep))
 
-        if not success:
+        if response is None:
             assert last_exc is not None
-            print(
-                f"      skip after {max(1, args.max_retries)} failed attempt(s): {last_exc}"
-            )
+            print(f"      skip after {max(1, args.max_retries)} failed attempt(s): {last_exc}")
             record_skipped_image(
                 skipped_images=skipped_images,
                 skipped_path=skipped_path,
@@ -430,6 +340,9 @@ def run_variant(config: VariantConfig) -> None:
             )
             continue
 
+        ensure_parent_dir(out_normal)
+        image_url = save_generated_image(runtime, response, out_normal, timeout=args.timeout)
+
         per_image_meta = {
             "image_name": image_path.name,
             "relative_image_path": image_path.relative_to(input_dir).as_posix(),
@@ -438,9 +351,16 @@ def run_variant(config: VariantConfig) -> None:
             "prompt_version": config.prompt_version,
             "prompt_level": config.prompt_level,
             "use_example_pair": config.use_example_pair,
-            "normal_model": args.normal_model,
+            "provider": runtime.provider,
+            "normal_model": runtime.normal_model,
+            "normal_base_url": runtime.normal_base_url,
+            "generation_mode": runtime.generation_mode,
+            "normal_quality": runtime.normal_quality,
             "normal_output": out_normal.relative_to(output_dir).as_posix(),
             "normal_prompt": config.prompt_text,
+            "image_url": image_url,
+                "seed": args.seed,
+                "input_order": [str(path) for path in input_images],
             "example_rgb": str(example_rgb) if example_rgb else "",
             "example_normal": str(example_normal) if example_normal else "",
         }
@@ -453,46 +373,14 @@ def run_variant(config: VariantConfig) -> None:
     print(f"Meta output dir: {meta_dir.as_posix()}")
 
 
-FULL_PROMPT_CORE = (
-    "Generate a strict view-space per-pixel indoor normal map. "
-    "Preserve the input scene layout, object boundaries, silhouettes, broad curvature, panel recesses, frame thickness, and real shape transitions. "
-    "Use RGB only to encode surface orientation. "
-    "Do not preserve color, lighting tint, shading, highlights, reflections, cast shadows, ambient occlusion, or material texture. "
-    "Suppress wood grain, fabric weave, printed patterns, gloss streaks, and image noise. "
-    "Large planar regions should stay smooth and stable. "
-    "Curtains, blankets, pillows, and sofas should keep only broad macro folds. "
-    "Do not invent bevels, grooves, contours, or extra small detail. "
-)
 
 
-FULL_RGB_PLUS_EXAMPLE_PROMPT = (
-    "Input: (1) example RGB, (2) example normal map, (3) target RGB. "
-    "Task: generate the normal map for the target RGB image. "
-    "Use the example normal map only as the encoding and color-family reference. "
-    + FULL_PROMPT_CORE
-    + "Output: one normal map image."
-)
 
 
-FULL_RGB_ONLY_PROMPT = (
-    "Input: target RGB. "
-    "Task: generate the normal map for the input RGB image. "
-    + FULL_PROMPT_CORE
-    + "Output: one normal map image."
-)
 
 
-MINIMAL_RGB_PLUS_EXAMPLE_PROMPT = (
-    "Input: (1) example RGB, (2) example normal map, (3) target RGB. "
-    "Task: generate the normal map for the target RGB image. "
-    "Output: one normal map image."
-)
 
 
-MINIMAL_RGB_ONLY_PROMPT = (
-    "Task: generate the normal map of the input RGB image. "
-    "Output: one normal map image."
-)
 
 
 def main() -> None:

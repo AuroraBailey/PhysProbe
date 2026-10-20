@@ -1,0 +1,7 @@
+lighting_id,stress_slice,lighting_condition
+L0,normal_light,Normal
+L1,low_light,Low-light
+L2,hdr,HDR
+L3,dark_heavy,Dark-Heavy
+L4,highlight_heavy,Highlight-heavy
+L5,mixed_temperature,Mixed-temperature

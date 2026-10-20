@@ -1,0 +1,3366 @@
+{
+  "meta": {
+    "total_images_ending__im_png": 5206,
+    "scene_directories": 740,
+    "observed_scene_types": [
+      "living room",
+      "bedroom",
+      "dining room",
+      "kitchen",
+      "study",
+      "office"
+    ],
+    "observed_common_objects": [
+      "wall",
+      "ceiling",
+      "floor",
+      "window",
+      "door",
+      "curtain",
+      "dining table",
+      "coffee table",
+      "desk",
+      "dining chair",
+      "office chair",
+      "armchair",
+      "sofa",
+      "bed",
+      "nightstand",
+      "cabinet",
+      "kitchen cabinet",
+      "bookshelf",
+      "display shelf",
+      "countertop",
+      "sink",
+      "faucet",
+      "refrigerator",
+      "oven",
+      "microwave",
+      "range hood",
+      "rug",
+      "pendant light",
+      "chandelier",
+      "ceiling light",
+      "television",
+      "mirror",
+      "framed wall art",
+      "plant",
+      "vase",
+      "sculpture",
+      "pillow",
+      "toy",
+      "play structure",
+      "play equipment",
+      "trash bin",
+      "storage bin",
+      "laundry basket",
+      "wall sconce",
+      "clothes rail",
+      "hanging clothes"
+    ],
+    "optimized_for_scene_profiles": [
+      "bathroom",
+      "bedroom",
+      "bookstore",
+      "classroom",
+      "computer_cluster",
+      "conference_room",
+      "dining_room",
+      "full",
+      "game_room",
+      "generic",
+      "hallway",
+      "kitchen",
+      "living_room",
+      "lobby",
+      "misc",
+      "mixed_open_plan",
+      "office",
+      "storage"
+    ],
+    "coarse_backstop_classes": [
+      "bathtub",
+      "chair",
+      "table",
+      "shelf",
+      "container"
+    ]
+  },
+  "groups": {
+    "structure": [
+      "wall",
+      "ceiling",
+      "floor"
+    ],
+    "openings": [
+      "window",
+      "sliding glass door",
+      "glass door",
+      "interior door",
+      "door",
+      "wooden door",
+      "door frame",
+      "curtain",
+      "drapes",
+      "sheer curtain",
+      "blinds",
+      "roller blind",
+      "shower curtain",
+      "bath curtain"
+    ],
+    "furniture": [
+      "dining table",
+      "round dining table",
+      "coffee table",
+      "side table",
+      "console table",
+      "desk",
+      "office desk",
+      "conference table",
+      "meeting table",
+      "boardroom table",
+      "dining chair",
+      "side chair",
+      "office chair",
+      "desk chair",
+      "task chair",
+      "armchair",
+      "lounge chair",
+      "accent chair",
+      "waiting chair",
+      "guest chair",
+      "sofa",
+      "sectional sofa",
+      "loveseat",
+      "bed",
+      "headboard",
+      "nightstand",
+      "bench",
+      "banquette seating",
+      "bench seating",
+      "booth seating",
+      "stool",
+      "bar stool",
+      "counter stool",
+      "kitchen stool",
+      "ottoman",
+      "pouf",
+      "bean bag",
+      "cabinet",
+      "storage cabinet",
+      "built-in cabinet",
+      "drawer cabinet",
+      "chest of drawers",
+      "kitchen cabinet",
+      "wall cabinet",
+      "base cabinet",
+      "wardrobe",
+      "clothes rail",
+      "garment rack",
+      "clothing rack",
+      "hanging rail",
+      "closet rod",
+      "dresser",
+      "piano",
+      "upright piano",
+      "digital piano",
+      "tv stand",
+      "media console",
+      "bookshelf",
+      "wine rack",
+      "bottle rack",
+      "wine shelf",
+      "built-in wine rack",
+      "bookcase",
+      "storage shelf",
+      "shelving unit",
+      "cube shelf",
+      "open shelf",
+      "built-in shelf",
+      "display shelf",
+      "countertop",
+      "kitchen island",
+      "sink",
+      "faucet",
+      "refrigerator",
+      "oven",
+      "microwave",
+      "range hood",
+      "room divider",
+      "glass partition",
+      "glass wall",
+      "slatted partition",
+      "climbing wall",
+      "rock climbing wall",
+      "bouldering wall",
+      "decorative wall",
+      "accent wall",
+      "feature wall",
+      "decorative wall panel",
+      "padded wall",
+      "wall padding",
+      "padding wall panel",
+      "playhouse",
+      "indoor playhouse",
+      "play structure",
+      "play mat",
+      "foam mat",
+      "foam floor mat",
+      "safety mat",
+      "buffer mat",
+      "soft mat",
+      "cushion mat",
+      "gym mat",
+      "padding mat",
+      "floor padding",
+      "slide",
+      "kids slide",
+      "children's slide",
+      "play slide",
+      "indoor slide",
+      "toddler slide",
+      "rug",
+      "carpet",
+      "wainscoting",
+      "toilet",
+      "commode",
+      "wc",
+      "toilet bowl",
+      "bathroom sink",
+      "bathroom cabinet",
+      "medicine cabinet",
+      "bathroom vanity",
+      "vanity cabinet",
+      "bathtub",
+      "bath tub",
+      "tub",
+      "freestanding tub",
+      "chair",
+      "table",
+      "shelf"
+    ],
+    "objects": [
+      "pendant light",
+      "hanging lamp",
+      "chandelier",
+      "recessed ceiling light",
+      "spotlight",
+      "ceiling light",
+      "flush mount ceiling light",
+      "table lamp",
+      "floor lamp",
+      "television",
+      "wall-mounted television",
+      "display screen",
+      "monitor",
+      "wall-mounted display",
+      "mirror",
+      "wall mirror",
+      "framed wall art",
+      "picture frame",
+      "poster",
+      "wall poster",
+      "bulletin board",
+      "notice board",
+      "wall chart",
+      "plant",
+      "potted plant",
+      "vase",
+      "sculpture",
+      "bust sculpture",
+      "toy",
+      "toys",
+      "toy blocks",
+      "building blocks",
+      "trash bin",
+      "trash can",
+      "garbage bin",
+      "waste bin",
+      "recycling bin",
+      "storage bin",
+      "organizer bin",
+      "plastic bin",
+      "toy bin",
+      "laundry basket",
+      "hamper",
+      "laundry hamper",
+      "wall sconce",
+      "wall lamp",
+      "bedside sconce",
+      "hanging clothes",
+      "hanging garments",
+      "clothes hangers",
+      "play equipment",
+      "climbing holds",
+      "rock holds",
+      "rings",
+      "gym rings",
+      "gymnastics rings",
+      "aerial rings",
+      "suspension rings",
+      "gymnastic rings",
+      "hanging rings",
+      "swing",
+      "rope swing",
+      "plate",
+      "bowl",
+      "cup",
+      "mug",
+      "glass",
+      "drinking glass",
+      "bottle",
+      "wine bottle",
+      "tray",
+      "placemat",
+      "pillow",
+      "cushion",
+      "throw pillow",
+      "container"
+    ]
+  },
+  "prompt_to_class": {
+    "sliding glass door": "glass door",
+    "interior door": "door",
+    "wooden door": "door",
+    "drapes": "curtain",
+    "sheer curtain": "curtain",
+    "roller blind": "blinds",
+    "round dining table": "dining table",
+    "console table": "side table",
+    "office desk": "desk",
+    "meeting table": "conference table",
+    "boardroom table": "conference table",
+    "side chair": "dining chair",
+    "desk chair": "office chair",
+    "task chair": "office chair",
+    "lounge chair": "armchair",
+    "accent chair": "armchair",
+    "waiting chair": "armchair",
+    "guest chair": "armchair",
+    "sectional sofa": "sofa",
+    "loveseat": "sofa",
+    "headboard": "bed",
+    "banquette seating": "bench",
+    "bench seating": "bench",
+    "booth seating": "bench",
+    "counter stool": "bar stool",
+    "kitchen stool": "bar stool",
+    "ottoman": "stool",
+    "pouf": "stool",
+    "bean bag": "stool",
+    "storage cabinet": "cabinet",
+    "built-in cabinet": "cabinet",
+    "drawer cabinet": "cabinet",
+    "chest of drawers": "dresser",
+    "wall cabinet": "kitchen cabinet",
+    "base cabinet": "kitchen cabinet",
+    "garment rack": "clothes rail",
+    "clothing rack": "clothes rail",
+    "hanging rail": "clothes rail",
+    "closet rod": "clothes rail",
+    "media console": "tv stand",
+    "upright piano": "piano",
+    "digital piano": "piano",
+    "bottle rack": "wine rack",
+    "wine shelf": "wine rack",
+    "built-in wine rack": "wine rack",
+    "bookcase": "bookshelf",
+    "storage shelf": "display shelf",
+    "shelving unit": "display shelf",
+    "cube shelf": "display shelf",
+    "open shelf": "display shelf",
+    "glass partition": "room divider",
+    "glass wall": "room divider",
+    "slatted partition": "room divider",
+    "rock climbing wall": "climbing wall",
+    "bouldering wall": "climbing wall",
+    "accent wall": "decorative wall",
+    "feature wall": "decorative wall",
+    "decorative wall panel": "decorative wall",
+    "padded wall": "decorative wall",
+    "wall padding": "decorative wall",
+    "padding wall panel": "decorative wall",
+    "playhouse": "play structure",
+    "indoor playhouse": "play structure",
+    "foam mat": "play mat",
+    "foam floor mat": "play mat",
+    "safety mat": "play mat",
+    "buffer mat": "play mat",
+    "soft mat": "play mat",
+    "cushion mat": "play mat",
+    "gym mat": "play mat",
+    "padding mat": "play mat",
+    "floor padding": "play mat",
+    "kids slide": "slide",
+    "children's slide": "slide",
+    "play slide": "slide",
+    "indoor slide": "slide",
+    "toddler slide": "slide",
+    "carpet": "rug",
+    "hanging lamp": "pendant light",
+    "spotlight": "spotlight",
+    "flush mount ceiling light": "ceiling light",
+    "wall-mounted television": "television",
+    "monitor": "display screen",
+    "wall-mounted display": "display screen",
+    "wall mirror": "mirror",
+    "picture frame": "framed wall art",
+    "wall poster": "poster",
+    "notice board": "bulletin board",
+    "wall chart": "bulletin board",
+    "potted plant": "plant",
+    "bust sculpture": "sculpture",
+    "toys": "toy",
+    "toy blocks": "toy",
+    "building blocks": "toy",
+    "trash can": "trash bin",
+    "garbage bin": "trash bin",
+    "waste bin": "trash bin",
+    "recycling bin": "trash bin",
+    "organizer bin": "storage bin",
+    "plastic bin": "storage bin",
+    "toy bin": "storage bin",
+    "hamper": "laundry basket",
+    "laundry hamper": "laundry basket",
+    "wall lamp": "wall sconce",
+    "bedside sconce": "wall sconce",
+    "hanging garments": "hanging clothes",
+    "clothes hangers": "hanging clothes",
+    "rock holds": "climbing holds",
+    "rings": "play equipment",
+    "gym rings": "play equipment",
+    "gymnastics rings": "play equipment",
+    "aerial rings": "play equipment",
+    "suspension rings": "play equipment",
+    "gymnastic rings": "play equipment",
+    "hanging rings": "play equipment",
+    "swing": "play equipment",
+    "rope swing": "play equipment",
+    "mug": "cup",
+    "drinking glass": "glass",
+    "wine bottle": "bottle",
+    "cushion": "pillow",
+    "throw pillow": "pillow",
+    "commode": "toilet",
+    "wc": "toilet",
+    "toilet bowl": "toilet",
+    "bathroom sink": "sink",
+    "bathroom cabinet": "cabinet",
+    "medicine cabinet": "cabinet",
+    "bathroom vanity": "cabinet",
+    "vanity cabinet": "cabinet",
+    "shower curtain": "curtain",
+    "bath curtain": "curtain",
+    "bath tub": "bathtub",
+    "tub": "bathtub",
+    "freestanding tub": "bathtub",
+    "bathtub": "bathtub",
+    "lavatory": "sink",
+    "chair": "chair",
+    "table": "table",
+    "shelf": "shelf",
+    "container": "container",
+    "bin": "container",
+    "box": "container",
+    "plastic box": "container",
+    "crate": "container",
+    "storage box": "container"
+  },
+  "thresholds": {
+    "wall": {
+      "score": 0.35,
+      "min_area": 5000
+    },
+    "ceiling": {
+      "score": 0.35,
+      "min_area": 5000
+    },
+    "floor": {
+      "score": 0.35,
+      "min_area": 5000
+    },
+    "window": {
+      "score": 0.2,
+      "min_area": 1200
+    },
+    "door": {
+      "score": 0.18,
+      "min_area": 1400
+    },
+    "glass door": {
+      "score": 0.2,
+      "min_area": 2500
+    },
+    "door frame": {
+      "score": 0.18,
+      "min_area": 1200
+    },
+    "curtain": {
+      "score": 0.18,
+      "min_area": 1000
+    },
+    "blinds": {
+      "score": 0.18,
+      "min_area": 700
+    },
+    "dining table": {
+      "score": 0.22,
+      "min_area": 1200
+    },
+    "coffee table": {
+      "score": 0.2,
+      "min_area": 800
+    },
+    "side table": {
+      "score": 0.2,
+      "min_area": 400
+    },
+    "desk": {
+      "score": 0.22,
+      "min_area": 1200
+    },
+    "conference table": {
+      "score": 0.2,
+      "min_area": 1200
+    },
+    "dining chair": {
+      "score": 0.22,
+      "min_area": 700
+    },
+    "office chair": {
+      "score": 0.2,
+      "min_area": 800
+    },
+    "armchair": {
+      "score": 0.2,
+      "min_area": 1200
+    },
+    "sofa": {
+      "score": 0.2,
+      "min_area": 2200
+    },
+    "bed": {
+      "score": 0.22,
+      "min_area": 3000
+    },
+    "nightstand": {
+      "score": 0.2,
+      "min_area": 500
+    },
+    "bench": {
+      "score": 0.2,
+      "min_area": 700
+    },
+    "bar stool": {
+      "score": 0.18,
+      "min_area": 220
+    },
+    "stool": {
+      "score": 0.18,
+      "min_area": 300
+    },
+    "cabinet": {
+      "score": 0.18,
+      "min_area": 1000
+    },
+    "kitchen cabinet": {
+      "score": 0.22,
+      "min_area": 1500
+    },
+    "wardrobe": {
+      "score": 0.22,
+      "min_area": 2200
+    },
+    "clothes rail": {
+      "score": 0.16,
+      "min_area": 180
+    },
+    "dresser": {
+      "score": 0.18,
+      "min_area": 1000
+    },
+    "piano": {
+      "score": 0.18,
+      "min_area": 1200
+    },
+    "tv stand": {
+      "score": 0.2,
+      "min_area": 1000
+    },
+    "bookshelf": {
+      "score": 0.18,
+      "min_area": 900
+    },
+    "wine rack": {
+      "score": 0.16,
+      "min_area": 120
+    },
+    "built-in shelf": {
+      "score": 0.22,
+      "min_area": 1000
+    },
+    "display shelf": {
+      "score": 0.18,
+      "min_area": 700
+    },
+    "countertop": {
+      "score": 0.2,
+      "min_area": 1200
+    },
+    "kitchen island": {
+      "score": 0.2,
+      "min_area": 1500
+    },
+    "sink": {
+      "score": 0.2,
+      "min_area": 200
+    },
+    "faucet": {
+      "score": 0.16,
+      "min_area": 40
+    },
+    "refrigerator": {
+      "score": 0.22,
+      "min_area": 2200
+    },
+    "oven": {
+      "score": 0.2,
+      "min_area": 300
+    },
+    "microwave": {
+      "score": 0.2,
+      "min_area": 180
+    },
+    "range hood": {
+      "score": 0.2,
+      "min_area": 300
+    },
+    "room divider": {
+      "score": 0.18,
+      "min_area": 900
+    },
+    "climbing wall": {
+      "score": 0.16,
+      "min_area": 1200
+    },
+    "decorative wall": {
+      "score": 0.16,
+      "min_area": 1200
+    },
+    "play structure": {
+      "score": 0.16,
+      "min_area": 900
+    },
+    "play mat": {
+      "score": 0.15,
+      "min_area": 300
+    },
+    "slide": {
+      "score": 0.16,
+      "min_area": 180
+    },
+    "rug": {
+      "score": 0.18,
+      "min_area": 1200
+    },
+    "wainscoting": {
+      "score": 0.2,
+      "min_area": 1200
+    },
+    "pendant light": {
+      "score": 0.18,
+      "min_area": 80
+    },
+    "chandelier": {
+      "score": 0.18,
+      "min_area": 120
+    },
+    "recessed ceiling light": {
+      "score": 0.18,
+      "min_area": 30
+    },
+    "spotlight": {
+      "score": 0.18,
+      "min_area": 24
+    },
+    "ceiling light": {
+      "score": 0.18,
+      "min_area": 80
+    },
+    "table lamp": {
+      "score": 0.18,
+      "min_area": 80
+    },
+    "floor lamp": {
+      "score": 0.18,
+      "min_area": 150
+    },
+    "television": {
+      "score": 0.18,
+      "min_area": 1000
+    },
+    "display screen": {
+      "score": 0.18,
+      "min_area": 500
+    },
+    "mirror": {
+      "score": 0.2,
+      "min_area": 800
+    },
+    "framed wall art": {
+      "score": 0.18,
+      "min_area": 300
+    },
+    "poster": {
+      "score": 0.16,
+      "min_area": 220
+    },
+    "bulletin board": {
+      "score": 0.16,
+      "min_area": 280
+    },
+    "plant": {
+      "score": 0.18,
+      "min_area": 100
+    },
+    "vase": {
+      "score": 0.18,
+      "min_area": 50
+    },
+    "sculpture": {
+      "score": 0.16,
+      "min_area": 80
+    },
+    "toy": {
+      "score": 0.14,
+      "min_area": 24
+    },
+    "trash bin": {
+      "score": 0.18,
+      "min_area": 120
+    },
+    "storage bin": {
+      "score": 0.18,
+      "min_area": 120
+    },
+    "laundry basket": {
+      "score": 0.18,
+      "min_area": 150
+    },
+    "wall sconce": {
+      "score": 0.16,
+      "min_area": 60
+    },
+    "hanging clothes": {
+      "score": 0.16,
+      "min_area": 100
+    },
+    "climbing holds": {
+      "score": 0.14,
+      "min_area": 16
+    },
+    "play equipment": {
+      "score": 0.16,
+      "min_area": 80
+    },
+    "plate": {
+      "score": 0.16,
+      "min_area": 50
+    },
+    "bowl": {
+      "score": 0.16,
+      "min_area": 50
+    },
+    "cup": {
+      "score": 0.16,
+      "min_area": 40
+    },
+    "glass": {
+      "score": 0.16,
+      "min_area": 40
+    },
+    "bottle": {
+      "score": 0.16,
+      "min_area": 40
+    },
+    "tray": {
+      "score": 0.16,
+      "min_area": 80
+    },
+    "placemat": {
+      "score": 0.16,
+      "min_area": 120
+    },
+    "pillow": {
+      "score": 0.18,
+      "min_area": 80
+    },
+    "toilet": {
+      "score": 0.2,
+      "min_area": 900
+    },
+    "table": {
+      "score": 0.18,
+      "min_area": 900
+    },
+    "chair": {
+      "score": 0.18,
+      "min_area": 300
+    },
+    "shelf": {
+      "score": 0.18,
+      "min_area": 800
+    },
+    "bathtub": {
+      "score": 0.2,
+      "min_area": 1800
+    },
+    "container": {
+      "score": 0.16,
+      "min_area": 120
+    }
+  },
+  "max_area_ratio": {
+    "wall": 0.55,
+    "ceiling": 0.35,
+    "floor": 0.4,
+    "window": 0.18,
+    "door": 0.18,
+    "glass door": 0.22,
+    "door frame": 0.2,
+    "curtain": 0.22,
+    "blinds": 0.16,
+    "dining table": 0.2,
+    "coffee table": 0.1,
+    "side table": 0.08,
+    "desk": 0.18,
+    "conference table": 0.22,
+    "dining chair": 0.1,
+    "office chair": 0.12,
+    "armchair": 0.16,
+    "sofa": 0.25,
+    "bed": 0.35,
+    "nightstand": 0.08,
+    "bench": 0.12,
+    "bar stool": 0.08,
+    "stool": 0.08,
+    "cabinet": 0.25,
+    "kitchen cabinet": 0.3,
+    "wardrobe": 0.25,
+    "clothes rail": 0.12,
+    "dresser": 0.18,
+    "piano": 0.22,
+    "tv stand": 0.15,
+    "bookshelf": 0.18,
+    "wine rack": 0.08,
+    "built-in shelf": 0.18,
+    "display shelf": 0.18,
+    "countertop": 0.18,
+    "kitchen island": 0.16,
+    "sink": 0.05,
+    "faucet": 0.03,
+    "refrigerator": 0.14,
+    "oven": 0.08,
+    "microwave": 0.05,
+    "range hood": 0.06,
+    "room divider": 0.18,
+    "climbing wall": 0.25,
+    "decorative wall": 0.25,
+    "play structure": 0.25,
+    "play mat": 0.18,
+    "slide": 0.12,
+    "rug": 0.3,
+    "wainscoting": 0.18,
+    "pendant light": 0.05,
+    "chandelier": 0.08,
+    "recessed ceiling light": 0.01,
+    "spotlight": 0.02,
+    "ceiling light": 0.04,
+    "table lamp": 0.05,
+    "floor lamp": 0.08,
+    "television": 0.12,
+    "display screen": 0.12,
+    "mirror": 0.12,
+    "framed wall art": 0.12,
+    "poster": 0.12,
+    "bulletin board": 0.14,
+    "plant": 0.1,
+    "vase": 0.05,
+    "sculpture": 0.08,
+    "toy": 0.04,
+    "trash bin": 0.08,
+    "storage bin": 0.08,
+    "laundry basket": 0.1,
+    "wall sconce": 0.06,
+    "hanging clothes": 0.12,
+    "climbing holds": 0.04,
+    "play equipment": 0.1,
+    "plate": 0.04,
+    "bowl": 0.04,
+    "cup": 0.03,
+    "glass": 0.03,
+    "bottle": 0.03,
+    "tray": 0.06,
+    "placemat": 0.08,
+    "pillow": 0.08,
+    "toilet": 0.18,
+    "table": 0.24,
+    "chair": 0.14,
+    "shelf": 0.25,
+    "bathtub": 0.35,
+    "container": 0.1
+  },
+  "class_order": [
+    "wall",
+    "ceiling",
+    "floor",
+    "window",
+    "door",
+    "glass door",
+    "door frame",
+    "curtain",
+    "blinds",
+    "dining table",
+    "coffee table",
+    "side table",
+    "desk",
+    "conference table",
+    "table",
+    "chair",
+    "dining chair",
+    "office chair",
+    "armchair",
+    "sofa",
+    "bed",
+    "nightstand",
+    "bench",
+    "bar stool",
+    "stool",
+    "cabinet",
+    "kitchen cabinet",
+    "wardrobe",
+    "clothes rail",
+    "dresser",
+    "piano",
+    "tv stand",
+    "bookshelf",
+    "wine rack",
+    "built-in shelf",
+    "display shelf",
+    "shelf",
+    "countertop",
+    "kitchen island",
+    "sink",
+    "bathtub",
+    "toilet",
+    "faucet",
+    "refrigerator",
+    "oven",
+    "microwave",
+    "range hood",
+    "room divider",
+    "climbing wall",
+    "decorative wall",
+    "play structure",
+    "play mat",
+    "slide",
+    "rug",
+    "wainscoting",
+    "pendant light",
+    "chandelier",
+    "recessed ceiling light",
+    "spotlight",
+    "ceiling light",
+    "table lamp",
+    "floor lamp",
+    "television",
+    "display screen",
+    "mirror",
+    "framed wall art",
+    "poster",
+    "bulletin board",
+    "plant",
+    "vase",
+    "sculpture",
+    "toy",
+    "trash bin",
+    "storage bin",
+    "laundry basket",
+    "container",
+    "wall sconce",
+    "hanging clothes",
+    "climbing holds",
+    "play equipment",
+    "plate",
+    "bowl",
+    "cup",
+    "glass",
+    "bottle",
+    "tray",
+    "placemat",
+    "pillow"
+  ],
+  "class_palette": {
+    "wall": [
+      217,
+      76,
+      76
+    ],
+    "ceiling": [
+      255,
+      71,
+      51
+    ],
+    "floor": [
+      255,
+      122,
+      89
+    ],
+    "window": [
+      217,
+      95,
+      43
+    ],
+    "door": [
+      255,
+      156,
+      89
+    ],
+    "glass door": [
+      255,
+      153,
+      51
+    ],
+    "door frame": [
+      217,
+      160,
+      76
+    ],
+    "curtain": [
+      255,
+      194,
+      51
+    ],
+    "blinds": [
+      255,
+      222,
+      89
+    ],
+    "dining table": [
+      217,
+      199,
+      43
+    ],
+    "coffee table": [
+      255,
+      255,
+      89
+    ],
+    "side table": [
+      235,
+      255,
+      51
+    ],
+    "desk": [
+      189,
+      217,
+      76
+    ],
+    "conference table": [
+      176,
+      226,
+      88
+    ],
+    "dining chair": [
+      194,
+      255,
+      51
+    ],
+    "office chair": [
+      189,
+      255,
+      89
+    ],
+    "armchair": [
+      130,
+      217,
+      43
+    ],
+    "sofa": [
+      156,
+      255,
+      89
+    ],
+    "bed": [
+      112,
+      255,
+      51
+    ],
+    "nightstand": [
+      104,
+      217,
+      76
+    ],
+    "bench": [
+      71,
+      255,
+      51
+    ],
+    "bar stool": [
+      84,
+      240,
+      70
+    ],
+    "stool": [
+      89,
+      255,
+      89
+    ],
+    "cabinet": [
+      43,
+      217,
+      61
+    ],
+    "kitchen cabinet": [
+      89,
+      255,
+      122
+    ],
+    "wardrobe": [
+      51,
+      255,
+      112
+    ],
+    "clothes rail": [
+      64,
+      236,
+      126
+    ],
+    "dresser": [
+      76,
+      217,
+      132
+    ],
+    "piano": [
+      60,
+      196,
+      120
+    ],
+    "tv stand": [
+      51,
+      255,
+      153
+    ],
+    "bookshelf": [
+      89,
+      255,
+      189
+    ],
+    "wine rack": [
+      72,
+      240,
+      176
+    ],
+    "built-in shelf": [
+      43,
+      217,
+      165
+    ],
+    "display shelf": [
+      89,
+      255,
+      222
+    ],
+    "countertop": [
+      51,
+      255,
+      235
+    ],
+    "kitchen island": [
+      76,
+      217,
+      217
+    ],
+    "sink": [
+      51,
+      235,
+      255
+    ],
+    "faucet": [
+      89,
+      222,
+      255
+    ],
+    "refrigerator": [
+      43,
+      165,
+      217
+    ],
+    "oven": [
+      89,
+      189,
+      255
+    ],
+    "microwave": [
+      51,
+      153,
+      255
+    ],
+    "range hood": [
+      76,
+      132,
+      217
+    ],
+    "room divider": [
+      51,
+      112,
+      255
+    ],
+    "climbing wall": [
+      58,
+      96,
+      255
+    ],
+    "decorative wall": [
+      96,
+      76,
+      255
+    ],
+    "play structure": [
+      76,
+      102,
+      255
+    ],
+    "play mat": [
+      88,
+      148,
+      255
+    ],
+    "slide": [
+      64,
+      184,
+      255
+    ],
+    "rug": [
+      89,
+      122,
+      255
+    ],
+    "wainscoting": [
+      43,
+      61,
+      217
+    ],
+    "pendant light": [
+      89,
+      89,
+      255
+    ],
+    "chandelier": [
+      71,
+      51,
+      255
+    ],
+    "recessed ceiling light": [
+      104,
+      76,
+      217
+    ],
+    "spotlight": [
+      84,
+      76,
+      255
+    ],
+    "ceiling light": [
+      112,
+      51,
+      255
+    ],
+    "table lamp": [
+      156,
+      89,
+      255
+    ],
+    "floor lamp": [
+      130,
+      43,
+      217
+    ],
+    "television": [
+      189,
+      89,
+      255
+    ],
+    "display screen": [
+      176,
+      108,
+      255
+    ],
+    "mirror": [
+      194,
+      51,
+      255
+    ],
+    "framed wall art": [
+      189,
+      76,
+      217
+    ],
+    "poster": [
+      214,
+      118,
+      228
+    ],
+    "bulletin board": [
+      204,
+      96,
+      196
+    ],
+    "plant": [
+      235,
+      51,
+      255
+    ],
+    "vase": [
+      255,
+      89,
+      255
+    ],
+    "sculpture": [
+      217,
+      43,
+      199
+    ],
+    "toy": [
+      255,
+      128,
+      210
+    ],
+    "trash bin": [
+      96,
+      96,
+      96
+    ],
+    "storage bin": [
+      126,
+      126,
+      126
+    ],
+    "laundry basket": [
+      176,
+      128,
+      96
+    ],
+    "wall sconce": [
+      255,
+      214,
+      96
+    ],
+    "hanging clothes": [
+      148,
+      96,
+      196
+    ],
+    "climbing holds": [
+      255,
+      196,
+      96
+    ],
+    "play equipment": [
+      170,
+      89,
+      255
+    ],
+    "plate": [
+      255,
+      89,
+      222
+    ],
+    "bowl": [
+      255,
+      51,
+      194
+    ],
+    "cup": [
+      217,
+      76,
+      160
+    ],
+    "glass": [
+      255,
+      51,
+      153
+    ],
+    "bottle": [
+      255,
+      89,
+      156
+    ],
+    "tray": [
+      217,
+      43,
+      95
+    ],
+    "placemat": [
+      255,
+      89,
+      122
+    ],
+    "pillow": [
+      255,
+      51,
+      71
+    ],
+    "toilet": [
+      64,
+      208,
+      208
+    ],
+    "table": [
+      222,
+      214,
+      74
+    ],
+    "chair": [
+      185,
+      245,
+      72
+    ],
+    "shelf": [
+      99,
+      242,
+      210
+    ],
+    "bathtub": [
+      72,
+      214,
+      235
+    ],
+    "container": [
+      140,
+      140,
+      140
+    ]
+  },
+  "scene_profiles": {
+    "generic": {
+      "structure": [
+        "wall",
+        "ceiling",
+        "floor"
+      ],
+      "openings": [
+        "window",
+        "door",
+        "glass door",
+        "curtain",
+        "blinds"
+      ],
+      "furniture": [
+        "bed",
+        "nightstand",
+        "desk",
+        "dining table",
+        "coffee table",
+        "side table",
+        "conference table",
+        "dining chair",
+        "office chair",
+        "armchair",
+        "sofa",
+        "cabinet",
+        "kitchen cabinet",
+        "wardrobe",
+        "dresser",
+        "bookshelf",
+        "display shelf",
+        "tv stand",
+        "countertop",
+        "sink",
+        "toilet",
+        "refrigerator",
+        "oven",
+        "microwave",
+        "range hood",
+        "rug",
+        "table",
+        "chair",
+        "shelf"
+      ],
+      "objects": [
+        "ceiling light",
+        "pendant light",
+        "chandelier",
+        "table lamp",
+        "floor lamp",
+        "television",
+        "display screen",
+        "mirror",
+        "plant",
+        "vase",
+        "trash bin",
+        "storage bin",
+        "laundry basket",
+        "pillow",
+        "container"
+      ]
+    },
+    "bathroom": {
+      "structure": [
+        "wall",
+        "ceiling",
+        "floor"
+      ],
+      "openings": [
+        "window",
+        "door",
+        "glass door",
+        "curtain",
+        "shower curtain"
+      ],
+      "furniture": [
+        "sink",
+        "countertop",
+        "cabinet",
+        "toilet",
+        "bathtub",
+        "table",
+        "bathroom sink",
+        "bathroom cabinet",
+        "bathroom vanity",
+        "vanity",
+        "vanity top",
+        "bathroom countertop"
+      ],
+      "objects": [
+        "mirror",
+        "trash bin",
+        "storage bin",
+        "laundry basket",
+        "ceiling light",
+        "container"
+      ]
+    },
+    "bedroom": {
+      "structure": [
+        "wall",
+        "ceiling",
+        "floor"
+      ],
+      "openings": [
+        "window",
+        "door",
+        "curtain",
+        "blinds"
+      ],
+      "furniture": [
+        "bed",
+        "nightstand",
+        "wardrobe",
+        "dresser",
+        "desk",
+        "office chair",
+        "sofa",
+        "bookshelf",
+        "display shelf",
+        "rug",
+        "chair",
+        "table",
+        "shelf"
+      ],
+      "objects": [
+        "pillow",
+        "table lamp",
+        "floor lamp",
+        "ceiling light",
+        "mirror",
+        "television",
+        "plant",
+        "trash bin",
+        "storage bin",
+        "container"
+      ]
+    },
+    "living_room": {
+      "structure": [
+        "wall",
+        "ceiling",
+        "floor"
+      ],
+      "openings": [
+        "window",
+        "door",
+        "glass door",
+        "curtain",
+        "blinds"
+      ],
+      "furniture": [
+        "sofa",
+        "coffee table",
+        "side table",
+        "armchair",
+        "tv stand",
+        "cabinet",
+        "bookshelf",
+        "display shelf",
+        "rug",
+        "table",
+        "chair",
+        "shelf",
+        "piano",
+        "lounge chair",
+        "accent chair",
+        "upright piano",
+        "digital piano"
+      ],
+      "objects": [
+        "television",
+        "mirror",
+        "table lamp",
+        "floor lamp",
+        "ceiling light",
+        "pendant light",
+        "plant",
+        "vase",
+        "trash bin",
+        "pillow",
+        "container"
+      ]
+    },
+    "kitchen": {
+      "structure": [
+        "wall",
+        "ceiling",
+        "floor"
+      ],
+      "openings": [
+        "window",
+        "door",
+        "glass door",
+        "blinds",
+        "curtain"
+      ],
+      "furniture": [
+        "dining table",
+        "dining chair",
+        "bar stool",
+        "cabinet",
+        "kitchen cabinet",
+        "countertop",
+        "sink",
+        "refrigerator",
+        "oven",
+        "microwave",
+        "range hood",
+        "table",
+        "chair",
+        "shelf",
+        "kitchen sink",
+        "kitchen countertop"
+      ],
+      "objects": [
+        "ceiling light",
+        "pendant light",
+        "trash bin",
+        "storage bin",
+        "bottle",
+        "cup",
+        "bowl",
+        "plate",
+        "tray",
+        "placemat",
+        "container"
+      ]
+    },
+    "dining_room": {
+      "structure": [
+        "wall",
+        "ceiling",
+        "floor"
+      ],
+      "openings": [
+        "window",
+        "door",
+        "glass door",
+        "curtain",
+        "blinds"
+      ],
+      "furniture": [
+        "dining table",
+        "dining chair",
+        "side table",
+        "cabinet",
+        "display shelf",
+        "rug",
+        "table",
+        "chair",
+        "shelf"
+      ],
+      "objects": [
+        "pendant light",
+        "chandelier",
+        "ceiling light",
+        "plant",
+        "vase",
+        "trash bin",
+        "mirror",
+        "placemat",
+        "container"
+      ]
+    },
+    "office": {
+      "structure": [
+        "wall",
+        "ceiling",
+        "floor"
+      ],
+      "openings": [
+        "window",
+        "door",
+        "glass door",
+        "curtain",
+        "blinds"
+      ],
+      "furniture": [
+        "desk",
+        "office chair",
+        "conference table",
+        "cabinet",
+        "bookshelf",
+        "display shelf",
+        "sofa",
+        "tv stand",
+        "rug",
+        "table",
+        "chair",
+        "shelf"
+      ],
+      "objects": [
+        "display screen",
+        "television",
+        "ceiling light",
+        "table lamp",
+        "floor lamp",
+        "plant",
+        "trash bin",
+        "storage bin",
+        "mirror",
+        "container",
+        "monitor",
+        "computer monitor",
+        "desktop monitor",
+        "lcd monitor"
+      ]
+    },
+    "conference_room": {
+      "structure": [
+        "wall",
+        "ceiling",
+        "floor"
+      ],
+      "openings": [
+        "window",
+        "door",
+        "glass door",
+        "curtain",
+        "blinds"
+      ],
+      "furniture": [
+        "conference table",
+        "office chair",
+        "cabinet",
+        "display shelf",
+        "rug",
+        "table",
+        "chair",
+        "shelf"
+      ],
+      "objects": [
+        "display screen",
+        "television",
+        "ceiling light",
+        "pendant light",
+        "trash bin",
+        "plant",
+        "container",
+        "monitor",
+        "computer monitor",
+        "desktop monitor",
+        "lcd monitor"
+      ]
+    },
+    "mixed_open_plan": {
+      "structure": [
+        "wall",
+        "ceiling",
+        "floor"
+      ],
+      "openings": [
+        "window",
+        "door",
+        "glass door",
+        "curtain",
+        "blinds"
+      ],
+      "furniture": [
+        "bed",
+        "nightstand",
+        "dining table",
+        "dining chair",
+        "desk",
+        "office chair",
+        "sofa",
+        "cabinet",
+        "kitchen cabinet",
+        "countertop",
+        "sink",
+        "refrigerator",
+        "rug",
+        "table",
+        "chair",
+        "shelf",
+        "piano",
+        "lounge chair",
+        "accent chair",
+        "upright piano",
+        "digital piano"
+      ],
+      "objects": [
+        "television",
+        "mirror",
+        "ceiling light",
+        "pendant light",
+        "table lamp",
+        "floor lamp",
+        "plant",
+        "trash bin",
+        "storage bin",
+        "pillow",
+        "container"
+      ]
+    },
+    "storage": {
+      "structure": [
+        "wall",
+        "ceiling",
+        "floor"
+      ],
+      "openings": [
+        "door"
+      ],
+      "furniture": [
+        "cabinet",
+        "wardrobe",
+        "bookshelf",
+        "display shelf",
+        "shelf"
+      ],
+      "objects": [
+        "storage bin",
+        "trash bin",
+        "laundry basket",
+        "container"
+      ]
+    },
+    "classroom": {
+      "structure": [
+        "wall",
+        "ceiling",
+        "floor"
+      ],
+      "openings": [
+        "window",
+        "door",
+        "curtain",
+        "blinds"
+      ],
+      "furniture": [
+        "desk",
+        "dining chair",
+        "cabinet",
+        "bookshelf",
+        "display shelf",
+        "table",
+        "chair",
+        "shelf"
+      ],
+      "objects": [
+        "display screen",
+        "television",
+        "bulletin board",
+        "poster",
+        "ceiling light",
+        "trash bin",
+        "container",
+        "monitor",
+        "computer monitor",
+        "desktop monitor",
+        "lcd monitor"
+      ]
+    },
+    "bookstore": {
+      "structure": [
+        "wall",
+        "ceiling",
+        "floor"
+      ],
+      "openings": [
+        "window",
+        "door",
+        "glass door"
+      ],
+      "furniture": [
+        "bookshelf",
+        "display shelf",
+        "cabinet",
+        "side table",
+        "table",
+        "chair",
+        "shelf"
+      ],
+      "objects": [
+        "plant",
+        "trash bin",
+        "ceiling light",
+        "container",
+        "storage bin",
+        "laundry basket"
+      ]
+    },
+    "game_room": {
+      "structure": [
+        "wall",
+        "ceiling",
+        "floor"
+      ],
+      "openings": [
+        "window",
+        "door",
+        "curtain"
+      ],
+      "furniture": [
+        "sofa",
+        "side table",
+        "desk",
+        "office chair",
+        "display shelf",
+        "rug",
+        "play structure",
+        "play mat",
+        "table",
+        "chair",
+        "shelf"
+      ],
+      "objects": [
+        "display screen",
+        "television",
+        "table lamp",
+        "floor lamp",
+        "toy",
+        "play equipment",
+        "trash bin",
+        "container"
+      ]
+    },
+    "hallway": {
+      "structure": [
+        "wall",
+        "ceiling",
+        "floor"
+      ],
+      "openings": [
+        "door",
+        "window"
+      ],
+      "furniture": [
+        "cabinet",
+        "bench",
+        "chair",
+        "table"
+      ],
+      "objects": [
+        "ceiling light",
+        "mirror",
+        "plant",
+        "container",
+        "trash bin",
+        "storage bin",
+        "laundry basket"
+      ]
+    },
+    "lobby": {
+      "structure": [
+        "wall",
+        "ceiling",
+        "floor"
+      ],
+      "openings": [
+        "window",
+        "door",
+        "glass door"
+      ],
+      "furniture": [
+        "sofa",
+        "armchair",
+        "side table",
+        "cabinet",
+        "rug",
+        "chair",
+        "table"
+      ],
+      "objects": [
+        "ceiling light",
+        "pendant light",
+        "plant",
+        "trash bin",
+        "mirror",
+        "container",
+        "storage bin",
+        "laundry basket"
+      ]
+    },
+    "misc": {
+      "structure": [
+        "wall",
+        "ceiling",
+        "floor"
+      ],
+      "openings": [
+        "window",
+        "door",
+        "glass door",
+        "curtain",
+        "blinds"
+      ],
+      "furniture": [
+        "bed",
+        "dining table",
+        "desk",
+        "office chair",
+        "sofa",
+        "cabinet",
+        "display shelf",
+        "countertop",
+        "sink",
+        "toilet",
+        "rug",
+        "table",
+        "chair",
+        "shelf"
+      ],
+      "objects": [
+        "television",
+        "display screen",
+        "mirror",
+        "ceiling light",
+        "table lamp",
+        "floor lamp",
+        "plant",
+        "trash bin",
+        "storage bin",
+        "pillow",
+        "container"
+      ]
+    },
+    "computer_cluster": {
+      "structure": [
+        "wall",
+        "ceiling",
+        "floor"
+      ],
+      "openings": [
+        "window",
+        "door",
+        "glass door"
+      ],
+      "furniture": [
+        "desk",
+        "office chair",
+        "cabinet",
+        "display shelf",
+        "table",
+        "chair",
+        "shelf"
+      ],
+      "objects": [
+        "display screen",
+        "ceiling light",
+        "trash bin",
+        "container",
+        "monitor",
+        "computer monitor",
+        "desktop monitor",
+        "lcd monitor"
+      ]
+    },
+    "full": {
+      "structure": [
+        "wall",
+        "ceiling",
+        "floor"
+      ],
+      "openings": [
+        "window",
+        "sliding glass door",
+        "glass door",
+        "interior door",
+        "door",
+        "wooden door",
+        "door frame",
+        "curtain",
+        "drapes",
+        "sheer curtain",
+        "blinds",
+        "roller blind",
+        "shower curtain",
+        "bath curtain"
+      ],
+      "furniture": [
+        "dining table",
+        "round dining table",
+        "coffee table",
+        "side table",
+        "console table",
+        "desk",
+        "office desk",
+        "conference table",
+        "meeting table",
+        "boardroom table",
+        "dining chair",
+        "side chair",
+        "office chair",
+        "desk chair",
+        "task chair",
+        "armchair",
+        "lounge chair",
+        "accent chair",
+        "waiting chair",
+        "guest chair",
+        "sofa",
+        "sectional sofa",
+        "loveseat",
+        "bed",
+        "headboard",
+        "nightstand",
+        "bench",
+        "banquette seating",
+        "bench seating",
+        "booth seating",
+        "stool",
+        "bar stool",
+        "counter stool",
+        "kitchen stool",
+        "ottoman",
+        "pouf",
+        "bean bag",
+        "cabinet",
+        "storage cabinet",
+        "built-in cabinet",
+        "drawer cabinet",
+        "chest of drawers",
+        "kitchen cabinet",
+        "wall cabinet",
+        "base cabinet",
+        "wardrobe",
+        "clothes rail",
+        "garment rack",
+        "clothing rack",
+        "hanging rail",
+        "closet rod",
+        "dresser",
+        "piano",
+        "upright piano",
+        "digital piano",
+        "tv stand",
+        "media console",
+        "bookshelf",
+        "wine rack",
+        "bottle rack",
+        "wine shelf",
+        "built-in wine rack",
+        "bookcase",
+        "storage shelf",
+        "shelving unit",
+        "cube shelf",
+        "open shelf",
+        "built-in shelf",
+        "display shelf",
+        "countertop",
+        "kitchen island",
+        "sink",
+        "faucet",
+        "refrigerator",
+        "oven",
+        "microwave",
+        "range hood",
+        "room divider",
+        "glass partition",
+        "glass wall",
+        "slatted partition",
+        "climbing wall",
+        "rock climbing wall",
+        "bouldering wall",
+        "decorative wall",
+        "accent wall",
+        "feature wall",
+        "decorative wall panel",
+        "padded wall",
+        "wall padding",
+        "padding wall panel",
+        "playhouse",
+        "indoor playhouse",
+        "play structure",
+        "play mat",
+        "foam mat",
+        "foam floor mat",
+        "safety mat",
+        "buffer mat",
+        "soft mat",
+        "cushion mat",
+        "gym mat",
+        "padding mat",
+        "floor padding",
+        "slide",
+        "kids slide",
+        "children's slide",
+        "play slide",
+        "indoor slide",
+        "toddler slide",
+        "rug",
+        "carpet",
+        "wainscoting",
+        "toilet",
+        "commode",
+        "wc",
+        "toilet bowl",
+        "bathroom sink",
+        "bathroom cabinet",
+        "medicine cabinet",
+        "bathroom vanity",
+        "vanity cabinet",
+        "bathtub",
+        "table",
+        "chair",
+        "shelf"
+      ],
+      "objects": [
+        "pendant light",
+        "hanging lamp",
+        "chandelier",
+        "recessed ceiling light",
+        "spotlight",
+        "ceiling light",
+        "flush mount ceiling light",
+        "table lamp",
+        "floor lamp",
+        "television",
+        "wall-mounted television",
+        "display screen",
+        "monitor",
+        "wall-mounted display",
+        "mirror",
+        "wall mirror",
+        "framed wall art",
+        "picture frame",
+        "poster",
+        "wall poster",
+        "bulletin board",
+        "notice board",
+        "wall chart",
+        "plant",
+        "potted plant",
+        "vase",
+        "sculpture",
+        "bust sculpture",
+        "toy",
+        "toys",
+        "toy blocks",
+        "building blocks",
+        "trash bin",
+        "trash can",
+        "garbage bin",
+        "waste bin",
+        "recycling bin",
+        "storage bin",
+        "organizer bin",
+        "plastic bin",
+        "toy bin",
+        "laundry basket",
+        "hamper",
+        "laundry hamper",
+        "wall sconce",
+        "wall lamp",
+        "bedside sconce",
+        "hanging clothes",
+        "hanging garments",
+        "clothes hangers",
+        "play equipment",
+        "climbing holds",
+        "rock holds",
+        "rings",
+        "gym rings",
+        "gymnastics rings",
+        "aerial rings",
+        "suspension rings",
+        "gymnastic rings",
+        "hanging rings",
+        "swing",
+        "rope swing",
+        "plate",
+        "bowl",
+        "cup",
+        "mug",
+        "glass",
+        "drinking glass",
+        "bottle",
+        "wine bottle",
+        "tray",
+        "placemat",
+        "pillow",
+        "cushion",
+        "throw pillow",
+        "container"
+      ]
+    }
+  },
+  "profile_backstop_classes": {
+    "generic": [
+      "chair",
+      "table",
+      "shelf",
+      "container",
+      "display screen",
+      "sink",
+      "toilet"
+    ],
+    "bathroom": [
+      "bathtub",
+      "toilet",
+      "sink",
+      "countertop",
+      "cabinet",
+      "mirror",
+      "container"
+    ],
+    "bedroom": [
+      "bed",
+      "chair",
+      "table",
+      "cabinet",
+      "container"
+    ],
+    "bookstore": [
+      "shelf",
+      "table",
+      "chair",
+      "container"
+    ],
+    "classroom": [
+      "chair",
+      "table",
+      "shelf",
+      "display screen",
+      "container"
+    ],
+    "computer_cluster": [
+      "desk",
+      "chair",
+      "display screen",
+      "table",
+      "shelf"
+    ],
+    "conference_room": [
+      "chair",
+      "conference table",
+      "table",
+      "display screen",
+      "container"
+    ],
+    "dining_room": [
+      "chair",
+      "dining table",
+      "table",
+      "container"
+    ],
+    "game_room": [
+      "chair",
+      "table",
+      "container"
+    ],
+    "hallway": [
+      "chair",
+      "table",
+      "container"
+    ],
+    "kitchen": [
+      "cabinet",
+      "kitchen cabinet",
+      "countertop",
+      "sink",
+      "refrigerator",
+      "table",
+      "chair",
+      "container"
+    ],
+    "living_room": [
+      "sofa",
+      "armchair",
+      "coffee table",
+      "cabinet",
+      "shelf",
+      "piano",
+      "table"
+    ],
+    "lobby": [
+      "chair",
+      "table",
+      "container"
+    ],
+    "misc": [
+      "chair",
+      "table",
+      "cabinet",
+      "container"
+    ],
+    "mixed_open_plan": [
+      "sofa",
+      "armchair",
+      "bed",
+      "table",
+      "cabinet",
+      "shelf",
+      "piano",
+      "chair"
+    ],
+    "office": [
+      "chair",
+      "desk",
+      "table",
+      "shelf",
+      "display screen",
+      "container"
+    ],
+    "storage": [
+      "cabinet",
+      "shelf",
+      "container"
+    ],
+    "full": [
+      "bathtub",
+      "chair",
+      "table",
+      "shelf",
+      "container",
+      "display screen",
+      "sink",
+      "toilet"
+    ]
+  },
+  "profile_stage2_anchors": {
+    "generic": [
+      "wall",
+      "floor",
+      "bed",
+      "sofa",
+      "desk",
+      "table",
+      "chair",
+      "cabinet",
+      "shelf",
+      "sink",
+      "toilet"
+    ],
+    "bathroom": [
+      "bathtub",
+      "toilet",
+      "sink",
+      "countertop",
+      "cabinet",
+      "mirror"
+    ],
+    "bedroom": [
+      "bed",
+      "nightstand",
+      "chair",
+      "table",
+      "cabinet"
+    ],
+    "bookstore": [
+      "bookshelf",
+      "display shelf",
+      "shelf",
+      "table"
+    ],
+    "classroom": [
+      "desk",
+      "table",
+      "chair",
+      "cabinet",
+      "display screen"
+    ],
+    "computer_cluster": [
+      "desk",
+      "chair",
+      "display screen"
+    ],
+    "conference_room": [
+      "conference table",
+      "table",
+      "chair",
+      "display screen"
+    ],
+    "dining_room": [
+      "dining table",
+      "table",
+      "chair",
+      "cabinet"
+    ],
+    "game_room": [
+      "table",
+      "chair",
+      "cabinet"
+    ],
+    "hallway": [
+      "chair",
+      "table",
+      "door"
+    ],
+    "kitchen": [
+      "cabinet",
+      "kitchen cabinet",
+      "countertop",
+      "sink",
+      "refrigerator",
+      "table",
+      "chair"
+    ],
+    "living_room": [
+      "sofa",
+      "armchair",
+      "coffee table",
+      "cabinet",
+      "shelf",
+      "piano"
+    ],
+    "lobby": [
+      "chair",
+      "table",
+      "cabinet"
+    ],
+    "misc": [
+      "chair",
+      "table",
+      "cabinet",
+      "sofa"
+    ],
+    "mixed_open_plan": [
+      "sofa",
+      "armchair",
+      "bed",
+      "table",
+      "cabinet",
+      "shelf",
+      "piano"
+    ],
+    "office": [
+      "desk",
+      "table",
+      "chair",
+      "display screen",
+      "cabinet"
+    ],
+    "storage": [
+      "cabinet",
+      "display shelf",
+      "bookshelf",
+      "shelf",
+      "container"
+    ],
+    "full": [
+      "wall",
+      "floor",
+      "bed",
+      "sofa",
+      "desk",
+      "table",
+      "chair",
+      "cabinet",
+      "shelf",
+      "sink",
+      "toilet",
+      "bathtub",
+      "display screen"
+    ]
+  },
+  "profile_core_classes": {
+    "generic": [
+      "bed",
+      "sofa",
+      "desk",
+      "table",
+      "chair",
+      "cabinet",
+      "shelf",
+      "sink",
+      "toilet",
+      "bathtub",
+      "display screen",
+      "container"
+    ],
+    "bathroom": [
+      "bathtub",
+      "toilet",
+      "sink",
+      "cabinet",
+      "mirror"
+    ],
+    "bedroom": [
+      "bed",
+      "chair",
+      "cabinet",
+      "shelf",
+      "container"
+    ],
+    "bookstore": [
+      "shelf",
+      "table",
+      "cabinet"
+    ],
+    "classroom": [
+      "table",
+      "chair",
+      "cabinet",
+      "shelf",
+      "display screen"
+    ],
+    "computer_cluster": [
+      "desk",
+      "chair",
+      "display screen"
+    ],
+    "conference_room": [
+      "conference table",
+      "chair",
+      "display screen",
+      "cabinet"
+    ],
+    "dining_room": [
+      "dining table",
+      "chair",
+      "cabinet"
+    ],
+    "game_room": [
+      "table",
+      "chair",
+      "cabinet"
+    ],
+    "hallway": [
+      "chair",
+      "door"
+    ],
+    "kitchen": [
+      "cabinet",
+      "kitchen cabinet",
+      "countertop",
+      "sink",
+      "refrigerator"
+    ],
+    "living_room": [
+      "sofa",
+      "armchair",
+      "coffee table",
+      "cabinet",
+      "shelf",
+      "piano"
+    ],
+    "lobby": [
+      "table",
+      "chair",
+      "container"
+    ],
+    "misc": [
+      "sofa",
+      "chair",
+      "cabinet",
+      "table",
+      "container"
+    ],
+    "mixed_open_plan": [
+      "sofa",
+      "armchair",
+      "bed",
+      "table",
+      "cabinet",
+      "shelf",
+      "piano"
+    ],
+    "office": [
+      "desk",
+      "chair",
+      "cabinet",
+      "display screen",
+      "table"
+    ],
+    "storage": [
+      "cabinet",
+      "shelf",
+      "container",
+      "wardrobe"
+    ],
+    "full": []
+  },
+  "profile_optional_classes": {
+    "generic": [
+      "rug",
+      "mirror",
+      "television",
+      "plant",
+      "pillow"
+    ],
+    "bathroom": [
+      "curtain",
+      "container"
+    ],
+    "bedroom": [
+      "nightstand",
+      "desk",
+      "mirror",
+      "pillow"
+    ],
+    "bookstore": [
+      "chair",
+      "container"
+    ],
+    "classroom": [
+      "display screen",
+      "container"
+    ],
+    "computer_cluster": [
+      "shelf",
+      "cabinet",
+      "container"
+    ],
+    "conference_room": [
+      "rug",
+      "container"
+    ],
+    "dining_room": [
+      "side table",
+      "container"
+    ],
+    "game_room": [
+      "container",
+      "display screen"
+    ],
+    "hallway": [
+      "table",
+      "container"
+    ],
+    "kitchen": [
+      "table",
+      "chair",
+      "container"
+    ],
+    "living_room": [
+      "mirror",
+      "pillow",
+      "table lamp",
+      "floor lamp",
+      "plant",
+      "container"
+    ],
+    "lobby": [
+      "cabinet"
+    ],
+    "misc": [
+      "shelf",
+      "display screen"
+    ],
+    "mixed_open_plan": [
+      "container",
+      "mirror",
+      "pillow",
+      "table lamp",
+      "floor lamp"
+    ],
+    "office": [
+      "sofa",
+      "rug",
+      "shelf"
+    ],
+    "storage": [
+      "table"
+    ],
+    "full": []
+  },
+  "profile_prompt_to_class": {
+    "bedroom": {
+      "trash bin": "container",
+      "storage bin": "container",
+      "laundry basket": "container",
+      "office chair": "chair",
+      "desk chair": "chair",
+      "task chair": "chair",
+      "lounge chair": "armchair",
+      "accent chair": "armchair"
+    },
+    "bathroom": {
+      "trash bin": "container",
+      "storage bin": "container",
+      "laundry basket": "container",
+      "bathroom sink": "sink",
+      "bathroom cabinet": "cabinet",
+      "bathroom vanity": "cabinet",
+      "vanity": "cabinet",
+      "vanity top": "countertop",
+      "bathroom countertop": "countertop"
+    },
+    "misc": {
+      "trash bin": "container",
+      "storage bin": "container",
+      "laundry basket": "container",
+      "bookshelf": "shelf",
+      "display shelf": "shelf",
+      "office chair": "chair",
+      "dining chair": "chair",
+      "side chair": "chair"
+    },
+    "lobby": {
+      "trash bin": "container",
+      "storage bin": "container",
+      "laundry basket": "container",
+      "office chair": "chair",
+      "dining chair": "chair",
+      "side chair": "chair",
+      "coffee table": "table",
+      "side table": "table",
+      "conference table": "table",
+      "desk": "table"
+    },
+    "classroom": {
+      "dining chair": "chair",
+      "office chair": "chair",
+      "side chair": "chair",
+      "desk chair": "chair",
+      "task chair": "chair",
+      "desk": "table",
+      "bookshelf": "shelf",
+      "display shelf": "shelf",
+      "built-in shelf": "shelf",
+      "bookcase": "shelf",
+      "storage shelf": "shelf",
+      "shelving unit": "shelf",
+      "cube shelf": "shelf",
+      "open shelf": "shelf",
+      "monitor": "display screen",
+      "computer monitor": "display screen",
+      "desktop monitor": "display screen",
+      "lcd monitor": "display screen"
+    },
+    "conference_room": {
+      "office chair": "chair",
+      "dining chair": "chair",
+      "side chair": "chair",
+      "desk chair": "chair",
+      "task chair": "chair",
+      "waiting chair": "chair",
+      "guest chair": "chair",
+      "display shelf": "shelf",
+      "bookshelf": "shelf",
+      "monitor": "display screen",
+      "computer monitor": "display screen",
+      "desktop monitor": "display screen",
+      "lcd monitor": "display screen"
+    },
+    "computer_cluster": {
+      "office chair": "chair",
+      "desk chair": "chair",
+      "task chair": "chair",
+      "display shelf": "shelf",
+      "bookshelf": "shelf",
+      "monitor": "display screen",
+      "computer monitor": "display screen",
+      "desktop monitor": "display screen",
+      "lcd monitor": "display screen"
+    },
+    "bookstore": {
+      "bookshelf": "shelf",
+      "display shelf": "shelf",
+      "built-in shelf": "shelf",
+      "bookcase": "shelf",
+      "storage shelf": "shelf",
+      "shelving unit": "shelf",
+      "cube shelf": "shelf",
+      "open shelf": "shelf",
+      "trash bin": "container",
+      "storage bin": "container",
+      "laundry basket": "container"
+    },
+    "storage": {
+      "bookshelf": "shelf",
+      "display shelf": "shelf",
+      "built-in shelf": "shelf",
+      "bookcase": "shelf",
+      "storage shelf": "shelf",
+      "shelving unit": "shelf",
+      "cube shelf": "shelf",
+      "open shelf": "shelf",
+      "trash bin": "container",
+      "storage bin": "container",
+      "laundry basket": "container"
+    },
+    "office": {
+      "office chair": "chair",
+      "desk chair": "chair",
+      "task chair": "chair",
+      "bookshelf": "shelf",
+      "display shelf": "shelf",
+      "monitor": "display screen",
+      "computer monitor": "display screen",
+      "desktop monitor": "display screen",
+      "lcd monitor": "display screen",
+      "conference table": "table",
+      "trash bin": "container",
+      "storage bin": "container",
+      "laundry basket": "container"
+    },
+    "living_room": {
+      "bookshelf": "shelf",
+      "display shelf": "shelf",
+      "tv stand": "cabinet",
+      "media console": "cabinet",
+      "lounge chair": "armchair",
+      "accent chair": "armchair",
+      "upright piano": "piano",
+      "digital piano": "piano"
+    },
+    "mixed_open_plan": {
+      "bookshelf": "shelf",
+      "display shelf": "shelf",
+      "tv stand": "cabinet",
+      "media console": "cabinet",
+      "trash bin": "container",
+      "storage bin": "container",
+      "laundry basket": "container",
+      "lounge chair": "armchair",
+      "accent chair": "armchair",
+      "upright piano": "piano",
+      "digital piano": "piano"
+    },
+    "hallway": {
+      "office chair": "chair",
+      "dining chair": "chair",
+      "trash bin": "container",
+      "storage bin": "container",
+      "side chair": "chair",
+      "laundry basket": "container"
+    },
+    "dining_room": {
+      "dining chair": "chair",
+      "side chair": "chair",
+      "office chair": "chair",
+      "dining table": "table",
+      "round dining table": "table",
+      "trash bin": "container",
+      "storage bin": "container",
+      "laundry basket": "container"
+    },
+    "game_room": {
+      "office chair": "chair",
+      "dining chair": "chair",
+      "conference table": "table",
+      "coffee table": "table",
+      "side table": "table"
+    },
+    "kitchen": {
+      "kitchen sink": "sink",
+      "kitchen countertop": "countertop",
+      "dining table": "table",
+      "round dining table": "table",
+      "dining chair": "chair",
+      "bar stool": "chair",
+      "counter stool": "chair",
+      "kitchen stool": "chair",
+      "trash bin": "container",
+      "storage bin": "container",
+      "laundry basket": "container"
+    }
+  },
+  "profile_band_crops": {
+    "bathroom": [
+      {
+        "name": "fixture_band",
+        "box": [
+          0.0,
+          0.18,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "fixture_center",
+        "box": [
+          0.1,
+          0.1,
+          0.95,
+          0.95
+        ]
+      }
+    ],
+    "classroom": [
+      {
+        "name": "seating_band",
+        "box": [
+          0.0,
+          0.2,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "table_band",
+        "box": [
+          0.0,
+          0.15,
+          1.0,
+          0.92
+        ]
+      }
+    ],
+    "conference_room": [
+      {
+        "name": "seating_band",
+        "box": [
+          0.0,
+          0.18,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "mid_furniture",
+        "box": [
+          0.05,
+          0.1,
+          0.95,
+          0.92
+        ]
+      }
+    ],
+    "computer_cluster": [
+      {
+        "name": "desk_band",
+        "box": [
+          0.0,
+          0.18,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "screen_band",
+        "box": [
+          0.1,
+          0.0,
+          0.98,
+          0.78
+        ]
+      }
+    ],
+    "kitchen": [
+      {
+        "name": "counter_band",
+        "box": [
+          0.0,
+          0.18,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "fixture_mid",
+        "box": [
+          0.05,
+          0.1,
+          0.98,
+          0.95
+        ]
+      }
+    ],
+    "living_room": [
+      {
+        "name": "furniture_mid",
+        "box": [
+          0.0,
+          0.12,
+          1.0,
+          0.98
+        ]
+      },
+      {
+        "name": "standalone_mid",
+        "box": [
+          0.08,
+          0.12,
+          0.92,
+          0.95
+        ]
+      }
+    ],
+    "mixed_open_plan": [
+      {
+        "name": "furniture_mid",
+        "box": [
+          0.0,
+          0.12,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "openplan_center",
+        "box": [
+          0.08,
+          0.1,
+          0.92,
+          0.96
+        ]
+      }
+    ],
+    "bookstore": [
+      {
+        "name": "shelf_band",
+        "box": [
+          0.0,
+          0.02,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "shelf_center",
+        "box": [
+          0.1,
+          0.02,
+          0.98,
+          0.98
+        ]
+      }
+    ],
+    "storage": [
+      {
+        "name": "shelf_band",
+        "box": [
+          0.0,
+          0.02,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "storage_center",
+        "box": [
+          0.08,
+          0.05,
+          0.95,
+          0.98
+        ]
+      }
+    ],
+    "hallway": [
+      {
+        "name": "lower_band",
+        "box": [
+          0.0,
+          0.25,
+          1.0,
+          1.0
+        ]
+      }
+    ],
+    "lobby": [
+      {
+        "name": "lower_band",
+        "box": [
+          0.0,
+          0.22,
+          1.0,
+          1.0
+        ]
+      }
+    ],
+    "office": [
+      {
+        "name": "desk_band",
+        "box": [
+          0.0,
+          0.15,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "screen_band",
+        "box": [
+          0.0,
+          0.0,
+          1.0,
+          0.82
+        ]
+      }
+    ],
+    "misc": [
+      {
+        "name": "mid_band",
+        "box": [
+          0.0,
+          0.14,
+          1.0,
+          0.98
+        ]
+      }
+    ]
+  },
+  "default_object_underlay_policy": [
+    "__blank__",
+    "__structure__",
+    "__openings__"
+  ],
+  "object_underlay_policies": {
+    "display screen": [
+      "__blank__",
+      "__structure__",
+      "__openings__",
+      "desk",
+      "table",
+      "conference table",
+      "cabinet",
+      "tv stand",
+      "wall"
+    ],
+    "television": [
+      "__blank__",
+      "__structure__",
+      "__openings__",
+      "tv stand",
+      "cabinet",
+      "wall"
+    ],
+    "mirror": [
+      "__blank__",
+      "__structure__",
+      "__openings__",
+      "wall",
+      "cabinet",
+      "dresser",
+      "bathroom vanity"
+    ],
+    "pillow": [
+      "__blank__",
+      "__structure__",
+      "__openings__",
+      "bed",
+      "sofa",
+      "armchair",
+      "chair"
+    ],
+    "table lamp": [
+      "__blank__",
+      "__structure__",
+      "__openings__",
+      "table",
+      "desk",
+      "side table",
+      "conference table",
+      "nightstand",
+      "cabinet"
+    ],
+    "floor lamp": [
+      "__blank__",
+      "__structure__",
+      "__openings__",
+      "floor",
+      "rug"
+    ],
+    "wall sconce": [
+      "__blank__",
+      "__structure__",
+      "__openings__",
+      "wall"
+    ],
+    "plant": [
+      "__blank__",
+      "__structure__",
+      "__openings__",
+      "floor",
+      "rug",
+      "table",
+      "desk",
+      "side table",
+      "cabinet"
+    ],
+    "vase": [
+      "__blank__",
+      "__structure__",
+      "__openings__",
+      "table",
+      "desk",
+      "side table",
+      "cabinet"
+    ],
+    "tray": [
+      "__blank__",
+      "__structure__",
+      "__openings__",
+      "table",
+      "desk",
+      "conference table",
+      "countertop"
+    ],
+    "plate": [
+      "__blank__",
+      "__structure__",
+      "__openings__",
+      "table",
+      "desk",
+      "conference table",
+      "countertop"
+    ],
+    "bowl": [
+      "__blank__",
+      "__structure__",
+      "__openings__",
+      "table",
+      "desk",
+      "conference table",
+      "countertop"
+    ],
+    "cup": [
+      "__blank__",
+      "__structure__",
+      "__openings__",
+      "table",
+      "desk",
+      "conference table",
+      "countertop"
+    ],
+    "glass": [
+      "__blank__",
+      "__structure__",
+      "__openings__",
+      "table",
+      "desk",
+      "conference table",
+      "countertop"
+    ],
+    "bottle": [
+      "__blank__",
+      "__structure__",
+      "__openings__",
+      "table",
+      "desk",
+      "conference table",
+      "countertop"
+    ]
+  }
+}

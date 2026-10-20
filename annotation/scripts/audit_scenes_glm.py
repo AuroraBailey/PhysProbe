@@ -3,6 +3,17 @@
 
 from __future__ import annotations
 
+# Support both direct script execution and editable package installation.
+import sys as _env_sys
+from pathlib import Path as _EnvPath
+for _env_root in _EnvPath(__file__).resolve().parents:
+    if (_env_root / "src/common/utils/env.py").is_file():
+        _env_sys.path.insert(0, str(_env_root / "src"))
+        break
+from common.utils.env import load_project_env as _load_project_env
+_load_project_env()
+
+
 import argparse
 import json
 import os
@@ -56,8 +67,8 @@ def post_chat_completion(base_url: str, api_key: str, model: str, messages: List
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Batch scene audit with the GLM API")
-    parser.add_argument("--input", default="/work/sme-yangjx/biaozhu/openroomff_test_png", help="Input directory with one subdirectory per scene.")
-    parser.add_argument("--output", default="/work/sme-yangjx/biaozhu/scene_audit_outputs_glm4", help="Output directory for per-scene JSON files.")
+    parser.add_argument("--input", required=True, help="Input directory with one subdirectory per scene.")
+    parser.add_argument("--output", required=True, help="Output directory for per-scene JSON files.")
     parser.add_argument("--scene", default=None, help="Only process the specified scene name.")
     parser.add_argument("--limit", type=int, default=0, help="Maximum number of scenes to process. Use 0 for all scenes.")
     parser.add_argument("--sleep", type=float, default=0.0, help="Sleep time in seconds after each API call.")

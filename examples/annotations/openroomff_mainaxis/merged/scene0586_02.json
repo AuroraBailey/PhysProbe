@@ -1,0 +1,62 @@
+{
+  "scene": "scene0586_02",
+  "images": [
+    "0_im_5.png",
+    "1_im_5.png",
+    "2_im_5.png",
+    "4_im_5.png"
+  ],
+  "raw": [
+    "{\n  \"scene_category\": \"kitchen\",\n  \"layout_plausibility\": \"high\",\n  \"functional_coherence\": \"high\",\n  \"object_arrangement_coherence\": \"high\",\n  \"lighting_naturalness\": \"high\",\n  \"brightness_level\": \"uncertain\",\n  \"illumination_level\": \"uncertain\",\n  \"dynamic_range_level\": \"uncertain\",\n  \"highlight_strength\": \"uncertain\",\n  \"shadow_strength\": \"medium\",\n  \"dark_region_ratio_level\": \"uncertain\",\n  \"lighting_challenge_type\": \"none\",\n  \"overall_plausibility\": \"high\",\n  \"confidence\": 0.85,\n  \"issues\": [],\n  \"reason_short\": \"The scene contains a sink, refrigerator, and microwave, consistent with a kitchen's function. The layout and object placement are natural and reasonable.\"\n}",
+    "\n{\n  \"scene_category\": \"kitchen\",\n  \"layout_plausibility\": \"high\",\n  \"functional_coherence\": \"high\",\n  \"object_arrangement_coherence\": \"high\",\n  \"lighting_naturalness\": \"high\",\n  \"brightness_level\": \"uncertain\",\n  \"illumination_level\": \"uncertain\",\n  \"dynamic_range_level\": \"uncertain\",\n  \"highlight_strength\": \"uncertain\",\n  \"shadow_strength\": \"medium\",\n  \"lighting_challenge_type\": \"none\",\n  \"overall_plausibility\": \"high\",\n  \"confidence\": 0.9,\n  \"issues\": [],\n  \"reason_short\": \"The scene contains typical kitchen elements, with a reasonable layout and object placement, natural lighting, and high overall plausibility.\"\n}",
+    "{\n  \"scene_category\": \"kitchen\",\n  \"layout_plausibility\": \"medium\",\n  \"functional_coherence\": \"medium\",\n  \"object_arrangement_coherence\": \"medium\",\n  \"lighting_naturalness\": \"medium\",\n  \"brightness_level\": \"uncertain\",\n  \"illumination_level\": \"uncertain\",\n  \"dynamic_range_level\": \"uncertain\",\n  \"highlight_strength\": \"uncertain\",\n  \"shadow_strength\": \"medium\",\n  \"dark_region_ratio_level\": \"uncertain\",\n  \"lighting_challenge_type\": \"none\",\n  \"overall_plausibility\": \"medium\",\n  \"confidence\": 0.75,\n  \"issues\": [\n    \"The sink-and-cabinet structure appears unusual and may lack countertop support.\",\n    \"The refrigerator is placed against a wall corner without ventilation clearance, which appears implausible.\",\n    \"Several trash bins are clustered together, resulting in a poorly organized functional area.\",\n    \"The microwave table appears flimsy, and its structural support is questionable.\",\n    \"The relative positions of objects show slight inconsistencies across views.\"\n  ],\n  \"reason_short\": \"The scene contains basic kitchen elements, but questionable furniture support and layout logic reduce its overall plausibility.\"\n}"
+  ],
+  "scene_category": "kitchen",
+  "layout_plausibility": "high",
+  "functional_coherence": "high",
+  "object_arrangement_coherence": "high",
+  "lighting_naturalness": "high",
+  "brightness_level": "medium",
+  "illumination_level": "medium",
+  "dynamic_range_level": "medium",
+  "highlight_strength": "low",
+  "shadow_strength": "medium",
+  "dark_region_ratio_level": "low",
+  "overall_plausibility": "high",
+  "lighting_challenge_type": [
+    "none",
+    "none",
+    "none"
+  ],
+  "confidence": 0.8333333333333334,
+  "issues": [
+    [],
+    [],
+    [
+      "The sink-and-cabinet structure appears unusual and may lack countertop support.",
+      "The refrigerator is placed against a wall corner without ventilation clearance, which appears implausible.",
+      "Several trash bins are clustered together, resulting in a poorly organized functional area.",
+      "The microwave table appears flimsy, and its structural support is questionable.",
+      "The relative positions of objects show slight inconsistencies across views."
+    ]
+  ],
+  "reason_short": [
+    "The scene contains a sink, refrigerator, and microwave, consistent with a kitchen's function. The layout and object placement are natural and reasonable.",
+    "The scene contains typical kitchen elements, with a reasonable layout and object placement, natural lighting, and high overall plausibility.",
+    "The scene contains basic kitchen elements, but questionable furniture support and layout logic reduce its overall plausibility."
+  ],
+  "parse_error": [
+    null,
+    null,
+    null
+  ],
+  "computed": {
+    "mean_luminance": 0.2563291817876643,
+    "mean_luma_srgb": 0.510034473454111,
+    "p5_luminance": 0.056695992179863146,
+    "p95_luminance": 0.4760508308895406,
+    "dynamic_range_stops": 3.069774551568668,
+    "highlight_ratio": 0.0,
+    "dark_ratio": 0.0980364481608073
+  }
+}

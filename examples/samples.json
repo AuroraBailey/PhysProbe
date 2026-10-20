@@ -1,0 +1,61 @@
+{
+  "path_base": "examples/",
+  "samples": [
+    {
+      "sample_id": "openroomff_scene0586_02_0",
+      "datasource": "openroomff",
+      "split": "mainaxis",
+      "scene_id": "scene0586_02",
+      "targets": [
+        "depth",
+        "normal",
+        "albedo",
+        "roughness"
+      ],
+      "original_rgb_path": "scene0586_02/main_xml/0_im_5.rgbe",
+      "files": {
+        "rgb": "assets/openroomff_mainaxis/scene0586_02/main_xml/0_im.png",
+        "depth": "assets/openroomff_mainaxis/scene0586_02/main_xml/0_depth.dat",
+        "normal": "assets/openroomff_mainaxis/scene0586_02/main_xml/0_normal.png",
+        "albedo": "assets/openroomff_mainaxis/scene0586_02/main_xml/0_albedo.png",
+        "roughness": "assets/openroomff_mainaxis/scene0586_02/main_xml/0_roughness.png",
+        "mask": "assets/openroomff_mainaxis/scene0586_02/main_xml/0_mask.png",
+        "segmentation": "assets/openroomff_mainaxis/scene0586_02/main_xml/0_seg.png"
+      },
+      "sha256": {
+        "rgb": "74daa140b4f21324b31f9abd8d54c0479ebcca145bc6ca8eaaf9254e03af4646",
+        "depth": "19f2b0e20dc4c77dbb08d41c77ce7952709bfd32b76732b8e5f5c50ebedd1d28",
+        "normal": "c111639cbe1a965af7faf8c278ab55ea8841cac19557035928d345c8675c8650",
+        "albedo": "58eae058bc64096a5a5cccfba31fdf9c7a4093fb586ee625423510f4244ffb79",
+        "roughness": "20326909df258f6d193bf75d9f7628fe417b8d9ad471f19a99bce0970a637458",
+        "mask": "455e787ce4dbda3aaadcaffca1b45ba752cf407cc1e2399db46deac72b021dc3",
+        "segmentation": "f1d64e31e9561a281ec706b969b97f71a1e00fdf42db20f6064ac7788df6a6a0"
+      }
+    },
+    {
+      "sample_id": "pbr_rooms_seed_10007_camera_12",
+      "datasource": "PBR-Rooms",
+      "split": "mainaxis",
+      "scene_id": "seed_10007",
+      "room_category": "Bathroom",
+      "camera_id": "camera_12",
+      "lighting_id": "L0",
+      "targets": [
+        "metallic"
+      ],
+      "original_rgb_path": "Bathroom/seed_10007/V2_P1_L0/Image/camera_12/Image_0_0_0001_12.png",
+      "files": {
+        "rgb": "assets/pbr_rooms/mainaxis/Bathroom/seed_10007/V2_P1_L0/Image/camera_12/Image_0_0_0001_12.png",
+        "metallic": "assets/pbr_rooms/mainaxis/Bathroom/seed_10007/V2_P1_L0/Metallic/camera_12/Metallic_0001.png",
+        "mask": "assets/pbr_rooms/mainaxis/Bathroom/seed_10007/V2_P1_L0/MetallicEvalMask/camera_12/MetallicEvalMask_0001.png",
+        "segmentation": "assets/pbr_rooms/mainaxis/Bathroom/seed_10007/V2_P1_L0/ObjectSegmentation/camera_12/ObjectSegmentation_0_0_0001_12.png"
+      },
+      "sha256": {
+        "rgb": "1feada96644fd08ad6432f83517249ce5da67cf1b9ac019aaa75edf964d8d5de",
+        "metallic": "9566fd94e98e0f2518ad6fbc80fc3e6a88666fc8d7e41c099f0048981ef238cd",
+        "mask": "9c085396a005ce5153c13283a7270bf820b8bc1c80d430beba9b25573ccb9bd0",
+        "segmentation": "e7975165969dc81a808c131ca7c7369f270cb7df8df23b43670aba8b27df5a5a"
+      }
+    }
+  ]
+}

@@ -3,16 +3,16 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "dense-physical-map-code"
+name = "physprobe"
 version = "0.1.0"
-description = "Open-source paper code skeleton for dense physical map experiments."
+description = "Benchmark code for dense physical map generation, evaluation, and aggregation."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
 authors = [
   { name = "Paper Authors" }
 ]
-dependencies = []
+dependencies = ["python-dotenv>=1.0"]
 
 [project.optional-dependencies]
 main = [

@@ -1,0 +1,38 @@
+{
+  "scene": "scene0586_02",
+  "images": [
+    "0_im_5.png",
+    "1_im_5.png",
+    "2_im_5.png",
+    "4_im_5.png"
+  ],
+  "raw": "{\n  \"scene_category\": \"kitchen\",\n  \"layout_plausibility\": \"high\",\n  \"functional_coherence\": \"high\",\n  \"object_arrangement_coherence\": \"high\",\n  \"lighting_naturalness\": \"high\",\n  \"brightness_level\": \"uncertain\",\n  \"illumination_level\": \"uncertain\",\n  \"dynamic_range_level\": \"uncertain\",\n  \"highlight_strength\": \"uncertain\",\n  \"shadow_strength\": \"medium\",\n  \"dark_region_ratio_level\": \"uncertain\",\n  \"lighting_challenge_type\": \"none\",\n  \"overall_plausibility\": \"high\",\n  \"confidence\": 0.85,\n  \"issues\": [],\n  \"reason_short\": \"The scene contains a sink, refrigerator, and microwave, consistent with a kitchen's function. The layout and object placement are natural and reasonable.\"\n}",
+  "parsed": {
+    "scene_category": "kitchen",
+    "layout_plausibility": "high",
+    "functional_coherence": "high",
+    "object_arrangement_coherence": "high",
+    "lighting_naturalness": "high",
+    "brightness_level": "medium",
+    "illumination_level": "medium",
+    "dynamic_range_level": "medium",
+    "highlight_strength": "low",
+    "shadow_strength": "medium",
+    "dark_region_ratio_level": "low",
+    "lighting_challenge_type": "none",
+    "overall_plausibility": "high",
+    "confidence": 0.85,
+    "issues": [],
+    "reason_short": "The scene contains a sink, refrigerator, and microwave, consistent with a kitchen's function. The layout and object placement are natural and reasonable."
+  },
+  "parse_error": null,
+  "computed": {
+    "mean_luminance": 0.2563291817876643,
+    "mean_luma_srgb": 0.510034473454111,
+    "p5_luminance": 0.056695992179863146,
+    "p95_luminance": 0.4760508308895406,
+    "dynamic_range_stops": 3.069774551568668,
+    "highlight_ratio": 0.0,
+    "dark_ratio": 0.0980364481608073
+  }
+}

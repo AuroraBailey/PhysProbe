@@ -1,35 +1,30 @@
-# Normal Ablations
+# Normal Access Diagnostics
 
-This directory contains the released normal-map ablation scripts and lightweight example assets.
+Settings below follow the paper. Commands run from the repository root with
+the [ablation dependencies](../../../docs/install.md) and provider configured.
 
-## Variants
+| Setting | Meaning | Python entry |
+| --- | --- | --- |
+| A0 | Full instruction + E1/E2/E3 independent exemplar runs | `run_normal_a0.py` |
+| A1 | Full instruction, query RGB only | `run_normal_a1.py` |
+| A2 | Minimal instruction + E1/E2/E3 independent exemplar runs | `run_normal_a2.py` |
+| A3 | Minimal instruction, query RGB only | `run_normal_a3.py` |
 
-- `run_normal_a0.py`: full prompt plus a fixed RGB/normal exemplar pair.
-- `run_normal_a1.py`: full prompt without an exemplar pair.
-- `run_normal_a2.py`: minimal prompt plus a fixed RGB/normal exemplar pair.
-- `run_normal_a3.py`: minimal prompt without an exemplar pair.
+Generation instructions are in [prompts.py](prompts.py). See the [shared guide](../README.md) for environment setup, manifest selection, output conventions, prompt provenance and diagnostic aggregation.
 
-## Shared Logic
+A0 and A2 each run the same queries separately under E1, E2 and E3. They use
+`experiments/main_stress/normal/examples/image{,2,3}.png` and the corresponding
+`normal{,2,3}.png`. Outputs are separated by setting and exemplar.
+A0 shares the exact main/stress full prompt. All three-image inputs use query
+RGB, example RGB, example normal, matching their prompt numbering. A1 removes
+reference-dependent clauses while retaining the full geometry restrictions.
 
-- `normal_ablation_runner.py`: shared runner for all released normal ablation variants.
+```bash
+bash experiments/ablation/normal/scripts/run.sh --model doubao \
+  --input-root /path/to/processed_data --settings A0 A1 A2 A3 --dry-run
+# For a smaller smoke check, add --exemplar E1 --max-generate 1.
+```
 
-## Example Assets
-
-Lightweight reference assets live under `examples/`:
-
-- `examples/image2.png`
-- `examples/normal2.png`
-- `examples/image3.png`
-- `examples/normal3.png`
-
-Default exemplar mapping:
-
-- `A0` uses `image2.png` and `normal2.png`
-- `A2` uses `image3.png` and `normal3.png`
-
-You can override these defaults with `--example_rgb` and `--example_normal`.
-
-## Usage Notes
-
-- All scripts expect `ARK_API_KEY`.
-- Variants without exemplar pairs ignore `--example_rgb` and `--example_normal`.
+Current API models: Doubao and GPT Image 1.5. FireRed (and the other open-source
+models FLUX/LongCat) runs through separate local inference code and is outside
+this API-ablation directory's scope. The launcher uses the shared E1-E3 paths above.

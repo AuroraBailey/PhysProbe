@@ -1,70 +1,26 @@
-# Ablation Experiments
+# Access-Protocol Ablations
 
-Ablations live under `experiments/ablation/`.
+See the [ablation run guide](../experiments/ablation/README.md) for the paper
+setting matrix, model coverage, manifest selection and metric interpretation.
 
-The directory now contains released target-wise ablation scripts for `albedo`, `depth`, `metallic`, `normal`, and `roughness`.
+| Task | Settings | Guide |
+| --- | --- | --- |
+| Albedo | A0 full, A1 cached query analysis, A2 weakened, A3 minimal, B0 exemplar | [Albedo](../experiments/ablation/albedo/README.md) |
+| Depth | A0 RGB-only, A1 exemplar, A2 segmentation | [Depth](../experiments/ablation/depth/README.md) |
+| Normal | A0 full+exemplars, A1 full-only, A2 minimal+exemplars, A3 minimal-only | [Normal](../experiments/ablation/normal/README.md) |
+| Roughness | A0 RGB-only, A1 soft segmentation, A2 region fill, A3 exemplar | [Roughness](../experiments/ablation/roughness/README.md) |
 
-The recently reorganized target-wise folders follow the same broad pattern where practical:
-
-- a shared runner holds the reusable generation logic
-- thin variant entry scripts define the specific ablation condition
-- lightweight bundled assets live under `examples/` when a variant depends on a fixed exemplar pair
-
-This `examples/` pattern now applies across the reorganized released folders:
-
-- `experiments/ablation/albedo/examples/`
-- `experiments/ablation/depth/examples/`
-- `experiments/ablation/metallic/examples/`
-- `experiments/ablation/normal/examples/`
-- `experiments/ablation/roughness/examples/`
-
-## Entry Points
-
-For the released target-wise ablations, start from the corresponding subdirectories:
-
-```text
-experiments/ablation/albedo/
-experiments/ablation/depth/
-experiments/ablation/metallic/
-experiments/ablation/normal/
-experiments/ablation/roughness/
-```
-
-Representative entry scripts include:
+Setting IDs are defined separately for each target.
+The paper does not define a metallic access-ablation matrix. Open-source model inference
+(FireRed, FLUX and LongCat) is outside this API-ablation directory's scope.
 
 ```bash
-python experiments/ablation/albedo/run_albedo_multiview_seed2_a0.py --help
-python experiments/ablation/metallic/metallic_ablation_runner_strict_final.py --help
-python experiments/ablation/normal/run_normal_a0.py --help
-python experiments/ablation/roughness/roughness_ablation_runner.py --help
-python experiments/ablation/depth/depth_generation_a0.py --help
+bash experiments/ablation/depth/scripts/run.sh --model doubao \
+  --input-root /path/to/processed_data --settings A0 A1 A2 --dry-run
 ```
 
-## Depth Structure
-
-The released depth ablations are now organized as a shared runner plus thin entry points:
-
-- `experiments/ablation/depth/depth_ablation_runner.py`: shared logic for all released depth ablation variants
-- `experiments/ablation/depth/depth_generation_a0.py`: `rgb_only`
-- `experiments/ablation/depth/depth_generation_a1.py`: `rgb_plus_example`
-- `experiments/ablation/depth/depth_generation_a3.py`: `rgb_plus_seg`
-- `experiments/ablation/depth/examples/`: bundled fixed exemplar assets for the example-based variant
-
-This means the depth ablation release is no longer just a set of unrelated large standalone scripts. The reusable logic now lives in one place, while the variant entry files stay small and easier to audit.
-
-## Coverage
-
-The current ablation import covers:
-
-- `albedo`
-- `depth`
-- `metallic`
-- `normal`
-- `roughness`
-
-## Naming
-
-Use run names that encode the variant, for example:
-
-- `no_physics_loss_seed1`
-- `metallic_a2_region_fill_seed0`
+Use `start.sh` for detached execution and `progress.sh` for progress. All three
+read root `.env`; input paths and selection options must agree. The default
+manifest contains 96 queries per target. These are diagnostic subsets of the
+retained main/stress data and do not contribute alternative official scores.
+Normal A0/A2 run E1-E3 separately and average scores, not predictions.

@@ -3,21 +3,31 @@
 
 from __future__ import annotations
 
+# Support both direct script execution and editable package installation.
+import sys as _env_sys
+from pathlib import Path as _EnvPath
+for _env_root in _EnvPath(__file__).resolve().parents:
+    if (_env_root / "src/common/utils/env.py").is_file():
+        _env_sys.path.insert(0, str(_env_root / "src"))
+        _env_sys.path.insert(0, str(_env_root))
+        break
+from common.utils.env import load_project_env as _load_project_env
+_load_project_env()
+
+
 import sys
 
-from normal_ablation_runner import FULL_RGB_PLUS_EXAMPLE_PROMPT, VariantConfig, run_variant
+from experiments.ablation.normal.normal_ablation_runner import FULL_RGB_PLUS_EXAMPLE_PROMPT, VariantConfig, run_variant
 
 
 CONFIG = VariantConfig(
     variant_id="A0",
     variant_name="Full Prompt + Fixed Example Pair",
-    prompt_version="normal_a0_full_prompt_fixed_example_v2",
+    prompt_version="normal_a0_full_prompt_fixed_example_query_first_v3",
     description="A0 ablation: RGB + full prompt + fixed example pair.",
     prompt_text=FULL_RGB_PLUS_EXAMPLE_PROMPT,
     use_example_pair=True,
     prompt_level="full",
-    default_example_rgb="image2.png",
-    default_example_normal="normal2.png",
 )
 
 

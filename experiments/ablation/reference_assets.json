@@ -1,0 +1,65 @@
+{
+  "description": "Fixed diagnostic cue assets; normal uses the shared E1-E3 pairs.",
+  "assets": [
+    {
+      "target": "albedo",
+      "path": "experiments/ablation/albedo/examples/albedo.png",
+      "sha256": "93c2a89e5c25807a69e90696004fb73d64169280966e0797d73955e8664db4bb"
+    },
+    {
+      "target": "albedo",
+      "path": "experiments/ablation/albedo/examples/image.png",
+      "sha256": "86b573c26ba1dfe9d8f7c9b940689cd5b9cb6325274831303ac575967260b15f"
+    },
+    {
+      "target": "depth",
+      "path": "experiments/ablation/depth/examples/depth.png",
+      "sha256": "933ebf2bf4d7a7e4ab798002e53bba7a0e7d8bf32d16539a9be48bc12eae19d1"
+    },
+    {
+      "target": "depth",
+      "path": "experiments/ablation/depth/examples/image.png",
+      "sha256": "30827f8880aad0fda5a1fb336866ba533d534a3b220ea4bbb0354b3128ffddc8"
+    },
+    {
+      "target": "normal",
+      "path": "experiments/main_stress/normal/examples/image.png",
+      "sha256": "4222b83417e0d4259223ef7b36bf05352a456aa9821a475e1e16b0eb1ce2a1ba"
+    },
+    {
+      "target": "normal",
+      "path": "experiments/main_stress/normal/examples/image2.png",
+      "sha256": "ce200bde343262f3262bbd2191ae31905ad2d42f805a83ebb0ac88217eef10cb"
+    },
+    {
+      "target": "normal",
+      "path": "experiments/main_stress/normal/examples/image3.png",
+      "sha256": "d0df11a286e586736e16830edb71ae6df1ee5a3ea9519c9e1ed90ebad1d1a996"
+    },
+    {
+      "target": "normal",
+      "path": "experiments/main_stress/normal/examples/normal.png",
+      "sha256": "44ba69a6d098bc65a5d9eb7317a59e74102e941004532734ce5206d56fe321ac"
+    },
+    {
+      "target": "normal",
+      "path": "experiments/main_stress/normal/examples/normal2.png",
+      "sha256": "bc43323f353881d0cfef916fe59ce777bdaad7bd83be0aef95dbf8c227074835"
+    },
+    {
+      "target": "normal",
+      "path": "experiments/main_stress/normal/examples/normal3.png",
+      "sha256": "04f8a84b149d753abcb48e36ae712b69c9d92eab7140dc6d1b2925cce01ecd40"
+    },
+    {
+      "target": "roughness",
+      "path": "experiments/ablation/roughness/examples/image.png",
+      "sha256": "dddb53e6f48a2369df895dea6777dbd8395abdd3193175fe5a4115dd2d5d5c38"
+    },
+    {
+      "target": "roughness",
+      "path": "experiments/ablation/roughness/examples/roughness.png",
+      "sha256": "dfc86477258db0627924776807a2416db63b362a57fc2dfda2c6bfb49896c67b"
+    }
+  ]
+}

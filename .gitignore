@@ -34,3 +34,8 @@ checkpoints/
 *.ckpt
 *.pth
 *.pt
+
+# Local credentials
+.env
+.env.*
+!.env.example

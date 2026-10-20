@@ -1,0 +1,162 @@
+[
+  {
+    "module": "experiments.main_stress.albedo.prompts",
+    "function": "make_albedo_prompt",
+    "kwargs": {
+      "model": "doubao"
+    },
+    "sha256": "8c6de84f2dad90329d1b8556ed8204af985bf6ac71a3b490ff3f215a8934130e"
+  },
+  {
+    "module": "experiments.main_stress.albedo.prompts",
+    "function": "make_albedo_prompt",
+    "kwargs": {
+      "model": "gpt_image_15"
+    },
+    "sha256": "8c6de84f2dad90329d1b8556ed8204af985bf6ac71a3b490ff3f215a8934130e"
+  },
+  {
+    "module": "experiments.main_stress.albedo.prompts",
+    "function": "make_albedo_prompt",
+    "kwargs": {
+      "model": "gpt_image_2"
+    },
+    "sha256": "8c6de84f2dad90329d1b8556ed8204af985bf6ac71a3b490ff3f215a8934130e"
+  },
+  {
+    "module": "experiments.main_stress.albedo.prompts",
+    "function": "make_albedo_prompt",
+    "kwargs": {
+      "model": "gemini"
+    },
+    "sha256": "8c6de84f2dad90329d1b8556ed8204af985bf6ac71a3b490ff3f215a8934130e"
+  },
+  {
+    "module": "experiments.main_stress.albedo.prompts",
+    "function": "make_albedo_prompt",
+    "kwargs": {
+      "model": "qwen2"
+    },
+    "sha256": "8c6de84f2dad90329d1b8556ed8204af985bf6ac71a3b490ff3f215a8934130e"
+  },
+  {
+    "module": "experiments.main_stress.albedo.prompts",
+    "function": "make_albedo_prompt",
+    "kwargs": {
+      "model": "wan"
+    },
+    "sha256": "8c6de84f2dad90329d1b8556ed8204af985bf6ac71a3b490ff3f215a8934130e"
+  },
+  {
+    "module": "experiments.main_stress.depth.prompts",
+    "function": "build_relative_depth_prompt",
+    "kwargs": {
+      "depth_polarity": "near_white"
+    },
+    "sha256": "ac4981ca94fea6c625f5061dee1dd5bcec3291c4dcd0b02d9cebd016c977996c"
+  },
+  {
+    "module": "experiments.main_stress.normal.prompts",
+    "function": "make_one_shot_prompt",
+    "kwargs": {
+      "model": "doubao"
+    },
+    "sha256": "fd81358a4f6235e837962c6f12dbb0a7d7fe29c7be3c8a38ac2b7b12b1429d6a"
+  },
+  {
+    "module": "experiments.main_stress.normal.prompts",
+    "function": "make_one_shot_prompt",
+    "kwargs": {
+      "model": "gpt_image_15"
+    },
+    "sha256": "fd81358a4f6235e837962c6f12dbb0a7d7fe29c7be3c8a38ac2b7b12b1429d6a"
+  },
+  {
+    "module": "experiments.main_stress.roughness.prompts",
+    "function": "build_roughness_prompt",
+    "kwargs": {
+      "model": "doubao"
+    },
+    "sha256": "978f3fe936c6e413d3e80f794c97ffd4101348680c99715400a2a8485b98ecde"
+  },
+  {
+    "module": "experiments.main_stress.roughness.prompts",
+    "function": "build_roughness_prompt",
+    "kwargs": {
+      "model": "gpt_image_15"
+    },
+    "sha256": "978f3fe936c6e413d3e80f794c97ffd4101348680c99715400a2a8485b98ecde"
+  },
+  {
+    "module": "experiments.main_stress.roughness.prompts",
+    "function": "build_roughness_prompt",
+    "kwargs": {
+      "model": "gpt_image_2"
+    },
+    "sha256": "978f3fe936c6e413d3e80f794c97ffd4101348680c99715400a2a8485b98ecde"
+  },
+  {
+    "module": "experiments.main_stress.roughness.prompts",
+    "function": "build_roughness_prompt",
+    "kwargs": {
+      "model": "qwen2"
+    },
+    "sha256": "978f3fe936c6e413d3e80f794c97ffd4101348680c99715400a2a8485b98ecde"
+  },
+  {
+    "module": "experiments.main_stress.roughness.prompts",
+    "function": "build_roughness_prompt",
+    "kwargs": {
+      "model": "gemini"
+    },
+    "sha256": "978f3fe936c6e413d3e80f794c97ffd4101348680c99715400a2a8485b98ecde"
+  },
+  {
+    "module": "experiments.main_stress.metallic.prompts",
+    "function": "build_metallic_prompt",
+    "kwargs": {
+      "model": "doubao"
+    },
+    "sha256": "f0a993e279f0fbb0271d4230e070a2d442bad3c90ca437875604a576c5d0aed2"
+  },
+  {
+    "module": "experiments.main_stress.metallic.prompts",
+    "function": "build_metallic_prompt",
+    "kwargs": {
+      "model": "gpt_image_15"
+    },
+    "sha256": "f0a993e279f0fbb0271d4230e070a2d442bad3c90ca437875604a576c5d0aed2"
+  },
+  {
+    "module": "experiments.main_stress.metallic.prompts",
+    "function": "build_metallic_prompt",
+    "kwargs": {
+      "model": "gpt_image_2"
+    },
+    "sha256": "f0a993e279f0fbb0271d4230e070a2d442bad3c90ca437875604a576c5d0aed2"
+  },
+  {
+    "module": "experiments.main_stress.metallic.prompts",
+    "function": "build_metallic_prompt",
+    "kwargs": {
+      "model": "qwen2"
+    },
+    "sha256": "20e396d875903e3d7d5ea3e1b5adc4bbd3874aef07ce207c9e28d63aa48cb967"
+  },
+  {
+    "module": "experiments.main_stress.metallic.prompts",
+    "function": "build_metallic_prompt",
+    "kwargs": {
+      "model": "wan"
+    },
+    "sha256": "20e396d875903e3d7d5ea3e1b5adc4bbd3874aef07ce207c9e28d63aa48cb967"
+  },
+  {
+    "module": "experiments.main_stress.metallic.prompts",
+    "function": "build_metallic_prompt",
+    "kwargs": {
+      "model": "gemini"
+    },
+    "sha256": "f0a993e279f0fbb0271d4230e070a2d442bad3c90ca437875604a576c5d0aed2"
+  }
+]

@@ -1,56 +1,87 @@
-# Main Experiments
+# Main-axis and stress workflow
 
-The main experiment code is now organized by benchmark target instead of the previous demo `run_train.py` / `run_eval.py` scaffold.
+Use the [bundled examples](../examples/README.md) first to check generation and
+evaluation on two samples. For full experiments, obtain the source data, prepare
+the retained sample trees, and configure the required providers.
 
-## Directory Structure
+## 1. Prepare data
 
-```text
-experiments/main/
-|- albedo/
-|  |- doubao/
-|  |- examples/
-|  |- gpt/
-|  |- gpt2/
-|  `- qwen/
-|- depth/
-|  |- doubao/
-|  |- gpt/
-|  |- gpt2/
-|  `- qwen/
-|- metallic/
-|  |- doubao/
-|  |- gpt/
-|  |- gpt2/
-|  `- qwen/
-|- normal/
-|  |- doubao/
-|  |- examples/
-|  `- gpt/
-`- roughness/
-   |- doubao/
-   |- gpt/
-   |- gpt2/
-   `- qwen/
+Follow the [dataset layout and input requirements](dataset.md).
+Main/stress launchers scan processed directories; they do not read manifest CSVs.
+Each directory must contain exactly the retained queries intended for that run.
+Use source/split-specific roots and keep material maps, masks, and region maps
+aligned with the query RGBs.
+
+## 2. Preview and run generation
+
+The shared launchers use model IDs and options documented in the
+[main/stress guide](../experiments/main_stress/README.md).
+This bundled-input command makes no API calls:
+
+```bash
+bash experiments/main_stress/albedo/scripts/run.sh --model gpt-image-1.5 \
+  --dataset openroomff_mainaxis --input-root examples/assets \
+  --output-root outputs/examples/albedo --max-generate 1 --dry-run
 ```
 
-## Organization Rule
+For a prepared full dataset, replace the root and choose one split:
 
-Each target directory groups the scripts that were actually used to run the main experiments:
+```bash
+bash experiments/main_stress/albedo/scripts/run.sh --model gpt-image-1.5 \
+  --split mainaxis --input-root /path/to/prepared_data \
+  --output-root outputs/main_stress/albedo/gpt-image-1.5
+```
 
-- the core Python generation script;
-- run wrappers for 4-way or multi-worker execution;
-- detached-start helpers;
-- progress-check helpers;
-- fixed example assets when the protocol needs them, such as normal-map one-shot exemplars.
+Removing `--dry-run` invokes the selected provider. `--max-generate N` limits
+queries per dataset and is for smoke runs; omit it for the full retained split.
+`--deployment` overrides the selected generation model/deployment name.
 
-This layout keeps target-specific prompt logic, provider-specific API handling, and run wrappers close to each other, which is more faithful to the benchmark workflow than the old generic demo entry points.
+## 3. Background execution and progress
 
-For `albedo`, `depth`, and `roughness`, the `gpt2/` directories are thin wrappers around shared GPT-image generation logic. This keeps the released experiment paths explicit while avoiding large duplicated model-family implementations.
+Use the same model, paths, dataset selection, limits, and exemplar options:
 
-## Notes
+```bash
+bash experiments/main_stress/albedo/scripts/start.sh --model gpt-image-1.5 \
+  --split mainaxis --input-root /path/to/prepared_data \
+  --output-root outputs/main_stress/albedo/gpt-image-1.5
 
-- `albedo/examples/` stores fixed public-safe example assets bundled with the released albedo main-experiment folder.
-- `normal/examples/` stores the fixed RGB-normal example pairs used by the exemplar-conditioned normal protocol.
-- `metallic/` uses the target name `metallic` to stay consistent with the benchmark terminology, even though the legacy source directory was named `metallicity`.
-- The old placeholder files under `experiments/main/scripts/`, `experiments/main/methods/`, and `experiments/main/configs/demo_main.json` have been removed.
-- Environment setup for the released main experiment scripts is summarized in [docs/environment.md](environment.md).
+bash experiments/main_stress/albedo/scripts/progress.sh --model gpt-image-1.5 \
+  --split mainaxis --input-root /path/to/prepared_data \
+  --output-root outputs/main_stress/albedo/gpt-image-1.5 --watch 10
+```
+
+Logs, `run.pid`, and `run_status.json` are stored under the output root. Detached
+jobs continue after terminal closure. Inspect logs and remaining-image counts:
+a successful process exit does not establish complete prediction coverage.
+Use the recorded process-group PID to stop a detached job, for example
+`kill -- -12345`, substituting the actual PID.
+
+## 4. Evaluate predictions
+
+Run the [target evaluators](../tools/evaluation/README.md) against matching GT
+and masks. Keep source-specific outputs separate. Normal requires separate
+E1/E2/E3 evaluations; scores are averaged after source balancing. Roughness
+Region-Macro metrics need the corresponding frozen SAM3 color-ID maps.
+
+For the bundled example's existing predictions:
+
+```bash
+python3 examples/run.py --stage evaluate \
+  --output-root outputs/examples/gpt-image-1.5
+```
+
+## 5. Aggregate and compare
+
+Place evaluator CSVs in the documented
+[aggregation input layout](../tools/aggregation/README.md), then run:
+
+```bash
+python3 tools/aggregation/aggregate_results.py \
+  --evaluation-root /path/to/evaluation_exports \
+  --output-dir outputs/aggregation --resamples 1000 --seed 42
+```
+
+Generation output trees are not aggregation input trees. Aggregate completed
+pixel-evaluation CSVs, rather than prediction PNGs or launcher status files.
+Review sample coverage and follow the [reproducibility guide](reproducibility.md)
+before reporting official results.

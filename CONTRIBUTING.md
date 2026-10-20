@@ -1,28 +1,33 @@
 # Contributing
 
-Thanks for helping improve this benchmark repository.
+Changes should preserve the benchmark's sample identities, access settings, and
+metric definitions unless an explicit protocol change is intended.
 
-## Scope
+## Development setup
 
-This project focuses on benchmark release scaffolding, evaluation utilities, annotation tools, and experiment organization for dense physical-map prediction from single indoor images.
+From the repository root:
 
-## How To Contribute
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install -e ".[full]"
+python3 -m unittest discover -s tests -v
+python3 examples/run.py --dry-run
+```
 
-1. Open an issue before large changes so we can align on scope and benchmark compatibility.
-2. Keep pull requests focused and describe the motivation, behavior change, and validation you ran.
-3. Preserve existing directory boundaries such as `annotation/`, `docs/`, `experiments/`, `src/`, `tests/`, and `tools/`.
-4. Avoid committing secrets, provider credentials, private datasets, or outputs that cannot be redistributed.
-5. Add or update lightweight tests when a change affects validation, metrics, dataset parsing, or public schemas.
+The tests use mocked API responses. Live generation is separate and requires
+provider credentials; it is not a prerequisite for documentation changes.
 
-## Style Notes
+## Changes and validation
 
-- Prefer clear, reproducible behavior over benchmark-specific shortcuts.
-- Document any access-setting assumptions that affect reported results.
-- Keep public interfaces and file formats backward compatible when possible.
+- Keep patches focused. Explain the problem, resulting behavior, and relevant checks.
+- Update runnable commands and local links when renaming public files or options.
+- Keep prompts in the target's `prompts.py`; update version/hash contracts when
+  intentionally changing text, and disclose its effect on existing results.
+- Verify estimator, masking, interpolation, and sample-support behavior when
+  changing evaluators or aggregation. Do not silently replace missing metrics.
+- Use configurable paths and dataset-relative identifiers. Keep credentials,
+  local datasets, checkpoints, logs, and restricted outputs out of the release.
+- Preserve provider/dataset notices for third-party assets. See [data sources](data/sources.md).
 
-## Pull Request Checklist
-
-- The change is scoped to a clearly explained purpose.
-- Documentation is updated when behavior or public files change.
-- No proprietary credentials or restricted assets are included.
-- Relevant tests or smoke checks were run, or the reason they were not run is explained.
+Report security issues privately as described in [SECURITY.md](SECURITY.md).
