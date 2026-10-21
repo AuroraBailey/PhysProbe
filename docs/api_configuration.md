@@ -53,7 +53,7 @@ Optional `GT_ROOT` and `BASE_OUTPUT_DIR` supply task-launcher input/output roots
 The example runner uses `EXAMPLE_ASSET_ROOT` and `EXAMPLE_OUTPUT_ROOT`, with CLI
 `--asset-root` and `--output-root` taking precedence. See [.env.example](../.env.example).
 
-## Gemini image-interface options
+## Gemini requests
 
 Gemini requests send model, original image inputs, prompt, the runner's fixed
 aspect-ratio system message, and `modalities=["text", "image"]`. Main/stress
@@ -61,8 +61,4 @@ metallic uses a 16:9 aspect-ratio message; the other current main/stress targets
 and the shared diagnostic paths use 4:3. These are request messages; returned
 image dimensions are preserved. The timeout is set on the HTTP client.
 
-The adapter accepts and silently ignores image-interface keywords such as
-`size`, `quality`, `output_format`, `seed`, and `watermark`. They do not configure
-provider output size, encoding, quality, watermarking, or a deterministic seed.
-Run records distinguish `unused_options` from `effective_request`; no warning is
-emitted. The local single-image protocol still requires `n=1`.
+Each query requests one output image (`n=1`).

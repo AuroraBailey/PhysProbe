@@ -11,11 +11,11 @@ and paper-table aggregation with scene-cluster confidence intervals.
 
 [![Benchmark overview](annotation/overview.png)](annotation/overview.pdf)
 
-<p align="center"><em>Benchmark overview. Click the preview to open the PDF.</em></p>
+<p align="center"><em>Benchmark overview.</em> <a href="annotation/overview.pdf">View PDF</a></p>
 
 [![Generated physical-map results](annotation/results.png)](annotation/results.pdf)
 
-<p align="center"><em>Generated physical-map results. Click the preview to open the PDF.</em></p>
+<p align="center"><em>Generated physical-map results.</em> <a href="annotation/results.pdf">View PDF</a></p>
 
 ## Overview
 
@@ -211,8 +211,7 @@ GPT Image 1.5/2.0 share the Azure settings across targets. Native DashScope imag
 and chat-compatible URLs serve different APIs. Explicit CLI values override the
 process environment, followed by `.env` and script defaults. Credentials remain
 in the environment rather than task command arguments. See
-[API configuration](docs/api_configuration.md) for detailed behavior, including
-Gemini options that are accepted but not sent to its backend.
+[API configuration](docs/api_configuration.md) for provider settings and configuration precedence.
 
 The model table describes API generation entries implemented here. Upstream
 open-source inference and specialist checkpoints are used in their own

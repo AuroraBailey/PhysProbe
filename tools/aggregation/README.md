@@ -2,7 +2,6 @@
 
 This directory provides paper result aggregation. The tool reads
 completed evaluator CSVs; it neither calls models nor re-evaluates image pixels.
-No local manuscript or TeX file is required.
 
 ```bash
 python3 tools/aggregation/aggregate_results.py \
